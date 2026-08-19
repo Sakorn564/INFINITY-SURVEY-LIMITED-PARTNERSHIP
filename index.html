@@ -18,6 +18,7 @@ body{
     color:#172338;
 }
 
+/* HEADER */
 header{
     background:linear-gradient(135deg,#083f91,#2085ef);
     color:white;
@@ -55,6 +56,7 @@ header{
     gap:7px;
 }
 
+/* BUTTON */
 .btn{
     border:0;
     border-radius:10px;
@@ -88,12 +90,14 @@ header{
     color:#991b1b;
 }
 
+/* CONTAINER */
 .container{
     max-width:1180px;
     margin:20px auto;
     padding:0 14px;
 }
 
+/* STEPS */
 .steps{
     display:flex;
     gap:7px;
@@ -124,6 +128,7 @@ header{
     color:#15803d;
 }
 
+/* CARD */
 .card{
     background:white;
     border:1px solid #e8edf4;
@@ -147,6 +152,7 @@ h2{
     font-size:13px;
 }
 
+/* FORM */
 .grid{
     display:grid;
     grid-template-columns:repeat(2,minmax(0,1fr));
@@ -181,6 +187,14 @@ textarea{
     resize:vertical;
 }
 
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:#1267d9;
+    box-shadow:0 0 0 3px #1267d920;
+}
+
+/* EVENT */
 .event{
     border:1px solid #dbe4ef;
     border-radius:14px;
@@ -189,12 +203,14 @@ textarea{
     background:#fbfdff;
 }
 
+/* DAMAGE */
 .damage-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:10px;
 }
 
+/* FILE */
 .filebox{
     border:2px dashed #abc1dc;
     border-radius:14px;
@@ -224,14 +240,17 @@ textarea{
     font-size:12px;
 }
 
+/* SIGNATURE */
 .signature{
     width:100%;
     height:170px;
     border:2px dashed #9fb8d7;
     border-radius:12px;
     touch-action:none;
+    background:#fff;
 }
 
+/* ACTION */
 .actions{
     display:flex;
     justify-content:flex-end;
@@ -240,6 +259,7 @@ textarea{
     margin-top:18px;
 }
 
+/* NOTICE */
 .notice{
     padding:12px 14px;
     background:#eff6ff;
@@ -248,6 +268,7 @@ textarea{
     font-size:13px;
 }
 
+/* REVIEW */
 .review{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -267,6 +288,7 @@ textarea{
     margin-bottom:3px;
 }
 
+/* TABLE */
 .table-wrap{
     overflow:auto;
 }
@@ -289,6 +311,7 @@ th{
     background:#f7f9fc;
 }
 
+/* STATUS */
 .status{
     border-radius:999px;
     padding:5px 9px;
@@ -306,6 +329,11 @@ th{
     color:#8a5b00;
 }
 
+.completed{
+    background:#dcfce7;
+    color:#166534;
+}
+
 .hidden{
     display:none!important;
 }
@@ -317,6 +345,7 @@ th{
     padding:18px;
 }
 
+/* MOBILE */
 @media(max-width:700px){
 
     .grid,
@@ -353,6 +382,7 @@ th{
     }
 }
 
+/* PRINT */
 @media print{
 
     header,
@@ -360,6 +390,10 @@ th{
     .no-print,
     #tracking{
         display:none!important;
+    }
+
+    body{
+        background:white;
     }
 
     .container{
@@ -377,6 +411,7 @@ th{
 
 <body>
 
+<!-- HEADER -->
 <header>
 
 <div class="head">
@@ -386,8 +421,7 @@ th{
 INFINITY SURVEY LIMITED PARTNERSHIP
 
 <small>
-ห้างหุ้นส่วนจำกัด อินฟินิตี้ เซอร์เวย์ |
-CLAIM ONLINE
+ห้างหุ้นส่วนจำกัด อินฟินิตี้ เซอร์เวย์ | CLAIM ONLINE
 </small>
 
 </div>
@@ -413,7 +447,6 @@ CLAIM ONLINE
 
 
 <!-- STEP -->
-
 <div class="steps no-print">
 
 <div class="step active">
@@ -443,8 +476,7 @@ CLAIM ONLINE
 </div>
 
 
-<!-- SECTION 1 -->
-
+<!-- STEP 1 -->
 <section id="s1" class="card">
 
 <h1>
@@ -455,83 +487,49 @@ CLAIM ONLINE
 กรอกข้อมูลจากใบแจ้งความเสียหายของบริษัทประกัน
 </p>
 
-
 <div class="grid">
 
 <div>
-
 <label>เลขที่แจ้ง</label>
-
 <input id="claimNo">
-
 </div>
 
-
 <div>
-
 <label>เลขกรมธรรม์</label>
-
 <input id="policyNo">
-
 </div>
 
-
 <div>
-
 <label>วันที่แจ้ง</label>
-
 <input id="reportDate" type="date">
-
 </div>
 
-
 <div>
-
 <label>เวลา</label>
-
 <input id="reportTime" type="time">
-
 </div>
 
-
 <div>
-
 <label>บริษัทประกัน</label>
-
 <input id="insurer">
-
 </div>
 
-
 <div>
-
 <label>Call Center</label>
-
 <input id="callcenter">
-
 </div>
 
-
 <div>
-
 <label>ผู้แจ้ง</label>
-
 <input id="reporter">
-
 </div>
 
-
 <div>
-
 <label>เบอร์โทรศัพท์</label>
-
 <input id="phone">
-
 </div>
 
-
 <div>
-
 <label>ประเภทประกัน</label>
 
 <select id="insuranceType">
@@ -545,9 +543,7 @@ CLAIM ONLINE
 
 </div>
 
-
 <div>
-
 <label>ประเภทเคลม</label>
 
 <select id="claimType">
@@ -568,9 +564,7 @@ CLAIM ONLINE
 
 <button class="btn primary"
 onclick="go(2)">
-
 ถัดไป →
-
 </button>
 
 </div>
@@ -578,9 +572,7 @@ onclick="go(2)">
 </section>
 
 
-
-<!-- SECTION 2 -->
-
+<!-- STEP 2 -->
 <section id="s2" class="card hidden">
 
 <h1>
@@ -596,116 +588,70 @@ onclick="go(2)">
 รถประกัน
 </h2>
 
-
 <div class="grid">
 
 <div>
-
 <label>ทะเบียน</label>
-
 <input id="insuredPlate">
-
 </div>
 
-
 <div>
-
 <label>จังหวัด</label>
-
 <input id="insuredProvince">
-
 </div>
 
-
 <div>
-
 <label>ยี่ห้อ</label>
-
 <input id="insuredBrand">
-
 </div>
 
-
 <div>
-
 <label>รุ่น</label>
-
 <input id="insuredModel">
-
 </div>
 
-
 <div>
-
 <label>เลขอ้างอิง</label>
-
 <input id="insuredRef">
-
 </div>
 
 </div>
 
 
 <h2 style="margin-top:22px">
-
 รถคู่กรณี
-
 </h2>
-
 
 <div class="grid">
 
 <div>
-
 <label>ทะเบียน</label>
-
 <input id="thirdPlate">
-
 </div>
 
-
 <div>
-
 <label>จังหวัด</label>
-
 <input id="thirdProvince">
-
 </div>
 
-
 <div>
-
 <label>ยี่ห้อ</label>
-
 <input id="thirdBrand">
-
 </div>
 
-
 <div>
-
 <label>รุ่น</label>
-
 <input id="thirdModel">
-
 </div>
 
-
 <div>
-
 <label>ชื่อผู้ขับขี่</label>
-
 <input id="thirdDriver">
-
 </div>
 
-
 <div>
-
 <label>โทรศัพท์</label>
-
 <input id="thirdPhone">
-
 </div>
 
 </div>
@@ -716,22 +662,14 @@ onclick="go(2)">
 <div class="grid">
 
 <div>
-
 <label>วันที่เกิดเหตุ</label>
-
 <input id="eventDate" type="date">
-
 </div>
-
 
 <div>
-
 <label>เวลาเกิดเหตุ</label>
-
 <input id="eventTime" type="time">
-
 </div>
-
 
 <div class="full">
 
@@ -742,7 +680,6 @@ onclick="go(2)">
 <input id="eventPlace">
 
 </div>
-
 
 <div class="full">
 
@@ -763,16 +700,12 @@ onclick="go(2)">
 
 <button class="btn secondary"
 onclick="go(1)">
-
 ← ย้อนกลับ
-
 </button>
 
 <button class="btn primary"
 onclick="go(3)">
-
 ถัดไป →
-
 </button>
 
 </div>
@@ -780,9 +713,7 @@ onclick="go(3)">
 </section>
 
 
-
-<!-- SECTION 3 -->
-
+<!-- STEP 3 -->
 <section id="s3" class="card hidden">
 
 <h1>
@@ -804,11 +735,8 @@ onclick="go(3)">
 class="damage-grid">
 </div>
 
-
 <label style="margin-top:12px">
-
 ความเสียหายส่วนแรก (บาท)
-
 </label>
 
 <input
@@ -817,7 +745,6 @@ type="number"
 min="0">
 
 </div>
-
 
 
 <div class="event">
@@ -830,11 +757,8 @@ min="0">
 class="damage-grid">
 </div>
 
-
 <label style="margin-top:12px">
-
 ความเสียหายส่วนแรก (บาท)
-
 </label>
 
 <input
@@ -849,23 +773,20 @@ min="0">
 หมายเหตุเพิ่มเติม
 </label>
 
-<textarea id="damageNote"></textarea>
+<textarea id="damageNote">
+</textarea>
 
 
 <div class="actions no-print">
 
 <button class="btn secondary"
 onclick="go(2)">
-
 ← ย้อนกลับ
-
 </button>
 
 <button class="btn primary"
 onclick="go(4)">
-
 ถัดไป →
-
 </button>
 
 </div>
@@ -873,15 +794,12 @@ onclick="go(4)">
 </section>
 
 
-
-<!-- SECTION 4 -->
-
+<!-- STEP 4 -->
 <section id="s4" class="card hidden">
 
 <h1>
 📷 หลักฐานความเสียหาย
 </h1>
-
 
 <div class="notice">
 
@@ -890,6 +808,7 @@ onclick="go(4)">
 
 </div>
 
+<br>
 
 <div class="filebox">
 
@@ -900,7 +819,6 @@ accept="image/*,.pdf"
 multiple
 capture="environment">
 
-
 <p class="muted">
 
 📸 รูปรถ • ใบแจ้งความเสียหาย • เอกสารประกอบ
@@ -910,8 +828,7 @@ capture="environment">
 </div>
 
 
-<div
-id="preview"
+<div id="preview"
 class="preview">
 </div>
 
@@ -920,16 +837,12 @@ class="preview">
 
 <button class="btn secondary"
 onclick="go(3)">
-
 ← ย้อนกลับ
-
 </button>
 
 <button class="btn primary"
 onclick="go(5)">
-
 ถัดไป →
-
 </button>
 
 </div>
@@ -937,9 +850,7 @@ onclick="go(5)">
 </section>
 
 
-
-<!-- SECTION 5 -->
-
+<!-- STEP 5 -->
 <section id="s5" class="card hidden">
 
 <h1>
@@ -953,17 +864,20 @@ onclick="go(5)">
 
 <div class="grid">
 
-
 <div>
 
 <b>
 ผู้ปฏิบัติงาน / ผู้ตรวจสอบ
 </b>
 
+<br><br>
+
 <canvas
 id="sig1"
 class="signature">
 </canvas>
+
+<br>
 
 <button
 class="btn secondary no-print"
@@ -976,17 +890,20 @@ onclick="clearSig('sig1')">
 </div>
 
 
-
 <div>
 
 <b>
 ผู้รับหลักฐาน / ผู้ขับขี่
 </b>
 
+<br><br>
+
 <canvas
 id="sig2"
 class="signature">
 </canvas>
+
+<br>
 
 <button
 class="btn secondary no-print"
@@ -1055,15 +972,12 @@ onclick="go(6)">
 </section>
 
 
-
-<!-- SECTION 6 -->
-
+<!-- STEP 6 -->
 <section id="s6" class="card hidden">
 
 <h1>
 🔎 ตรวจสอบก่อนบันทึก
 </h1>
-
 
 <div
 id="review"
@@ -1081,7 +995,6 @@ onclick="go(5)">
 
 </button>
 
-
 <button
 class="btn secondary"
 onclick="saveDraft()">
@@ -1090,7 +1003,6 @@ onclick="saveDraft()">
 
 </button>
 
-
 <button
 class="btn success"
 onclick="submitClaim()">
@@ -1098,7 +1010,6 @@ onclick="submitClaim()">
 ✅ บันทึก Claim
 
 </button>
-
 
 <button
 class="btn primary"
@@ -1113,9 +1024,7 @@ onclick="printClaim()">
 </section>
 
 
-
 <!-- TRACKING -->
-
 <section
 id="tracking"
 class="card">
@@ -1194,9 +1103,7 @@ style="margin-top:15px">
 
 </thead>
 
-
-<tbody
-id="claimTable">
+<tbody id="claimTable">
 </tbody>
 
 </table>
@@ -1217,12 +1124,10 @@ Claim Online
 </div>
 
 
-
 <script>
 
 const $ = id =>
 document.getElementById(id);
-
 
 let claims =
 JSON.parse(
@@ -1241,6 +1146,7 @@ new Date().getFullYear() +
 String(Date.now()).slice(-6);
 
 
+/* INIT */
 
 function init(){
 
@@ -1272,6 +1178,7 @@ renderClaims();
 }
 
 
+/* DAMAGE */
 
 function damage(id,p){
 
@@ -1301,11 +1208,13 @@ placeholder="รายละเอียดความเสียหาย">
 
 }
 
-$(id).innerHTML = html;
+$(id).innerHTML =
+html;
 
 }
 
 
+/* STEP */
 
 function go(n){
 
@@ -1319,7 +1228,7 @@ $("s"+i)
 .classList
 .toggle(
 "hidden",
-i !== n
+i!==n
 );
 
 }
@@ -1332,24 +1241,23 @@ document
 
 x.classList.toggle(
 "active",
-i === n-1
+i===n-1
 );
 
 x.classList.toggle(
 "done",
-i < n-1
+i<n-1
 );
 
 }
 );
 
 
-if(n === 6){
+if(n===6){
 
 review();
 
 }
-
 
 scrollTo({
 top:0,
@@ -1359,29 +1267,32 @@ behavior:"smooth"
 }
 
 
+/* ESCAPE */
 
 function esc(v){
 
 return String(v ?? "")
 .replace(
 /[&<>"']/g,
-m =>
-({
+m=>({
+
 "&":"&amp;",
 "<":"&lt;",
 ">":"&gt;",
 '"':"&quot;",
 "'":"&#039;"
+
 }[m])
 );
 
 }
 
 
+/* DAMAGE ARRAY */
 
 function arr(prefix){
 
-let a = [];
+let a=[];
 
 for(
 let i=1;
@@ -1389,13 +1300,21 @@ i<=9;
 i++
 ){
 
-let value =
-$(prefix+i)
-.value
-.trim();
+let element =
+$(prefix+i);
 
-if(value)
-a.push(value);
+if(element){
+
+let v =
+element.value.trim();
+
+if(v){
+
+a.push(v);
+
+}
+
+}
 
 }
 
@@ -1404,15 +1323,18 @@ return a;
 }
 
 
+/* DATA */
 
 function data(){
 
 return {
 
-id:$("claimNo").value ||
+id:
+$("claimNo").value ||
 generateClaimNo(),
 
-policy:$("policyNo").value,
+policy:
+$("policyNo").value,
 
 reportDate:
 $("reportDate").value,
@@ -1514,147 +1436,92 @@ files:
 [...$("files").files]
 .map(x=>x.name),
 
-status:"Pending"
+status:
+"Pending"
 
 };
 
 }
 
 
+/* REVIEW */
 
 function review(){
 
 let c = data();
 
-
 $("review").innerHTML = `
 
 <div>
-
 <b>เลขที่แจ้ง</b>
-
 ${esc(c.id)}
-
 </div>
 
-
 <div>
-
 <b>กรมธรรม์</b>
-
-${esc(c.policy) || "-"}
-
+${esc(c.policy)||"-"}
 </div>
 
-
 <div>
-
 <b>บริษัทประกัน</b>
-
-${esc(c.insurer) || "-"}
-
+${esc(c.insurer)||"-"}
 </div>
 
-
 <div>
-
 <b>ผู้แจ้ง</b>
-
-${esc(c.reporter) || "-"}
-
+${esc(c.reporter)||"-"}
 </div>
 
-
 <div>
-
 <b>รถประกัน</b>
-
-${esc(c.insuredPlate) || "-"}
-
+${esc(c.insuredPlate)||"-"}
 </div>
 
-
 <div>
-
 <b>รถคู่กรณี</b>
-
-${esc(c.thirdPlate) || "-"}
-
+${esc(c.thirdPlate)||"-"}
 </div>
 
-
 <div>
-
 <b>วันเวลาเกิดเหตุ</b>
-
 ${esc(c.eventDate)}
 ${esc(c.eventTime)}
-
 </div>
-
 
 <div>
-
 <b>สถานที่</b>
-
-${esc(c.eventPlace) || "-"}
-
+${esc(c.eventPlace)||"-"}
 </div>
-
 
 <div class="full">
-
 <b>ลักษณะเหตุการณ์</b>
-
-${esc(c.eventDetail) || "-"}
-
+${esc(c.eventDetail)||"-"}
 </div>
 
-
 <div>
-
-<b>
-ความเสียหายรถประกัน
-</b>
-
+<b>ความเสียหายรถประกัน</b>
 ${
 c.insuredDamage.length
 ?
-c.insuredDamage
-.map(esc)
-.join("<br>")
+c.insuredDamage.map(esc).join("<br>")
 :
 "-"
 }
-
 </div>
 
-
 <div>
-
-<b>
-ความเสียหายรถคู่กรณี
-</b>
-
+<b>ความเสียหายรถคู่กรณี</b>
 ${
 c.thirdDamage.length
 ?
-c.thirdDamage
-.map(esc)
-.join("<br>")
+c.thirdDamage.map(esc).join("<br>")
 :
 "-"
 }
-
 </div>
 
-
 <div>
-
-<b>
-หลักฐาน
-</b>
-
+<b>หลักฐาน</b>
 ${
 c.files.length
 ?
@@ -1662,19 +1529,11 @@ c.files.map(esc).join("<br>")
 :
 "ไม่มี"
 }
-
 </div>
 
-
 <div>
-
-<b>
-ลายเซ็น
-</b>
-
-ผู้ตรวจสอบ +
-ผู้รับหลักฐาน
-
+<b>ลายเซ็น</b>
+ผู้ตรวจสอบ + ผู้รับหลักฐาน
 </div>
 
 `;
@@ -1682,6 +1541,7 @@ c.files.map(esc).join("<br>")
 }
 
 
+/* SAVE */
 
 function saveDraft(){
 
@@ -1699,6 +1559,7 @@ c.id
 }
 
 
+/* SUBMIT */
 
 function submitClaim(){
 
@@ -1716,18 +1577,18 @@ c.id
 }
 
 
+/* UPSERT */
 
 function upsert(c){
 
-let index =
+let i =
 claims.findIndex(
-x => x.id === c.id
+x=>x.id===c.id
 );
 
+if(i>=0){
 
-if(index >= 0){
-
-claims[index] = c;
+claims[i] = c;
 
 }else{
 
@@ -1735,31 +1596,27 @@ claims.unshift(c);
 
 }
 
-
 localStorage.setItem(
 "infinity_claims",
 JSON.stringify(claims)
 );
-
 
 renderClaims();
 
 }
 
 
+/* TRACKING */
 
 function renderClaims(){
 
 let q =
-(
-$("search").value || ""
-)
+($("search").value||"")
 .toLowerCase();
-
 
 let result =
 claims.filter(
-c =>
+c=>
 (
 c.id +
 " " +
@@ -1771,47 +1628,39 @@ c.insuredPlate
 .includes(q)
 );
 
-
 $("count").value =
 claims.length +
 " รายการ";
 
 
 $("claimTable").innerHTML =
-result.map(
-c => `
+result.map(c=>`
 
 <tr>
 
 <td>
-
 <b>
 ${esc(c.id)}
 </b>
-
 </td>
-
 
 <td>
-${esc(c.reporter) || "-"}
+${esc(c.reporter)||"-"}
 </td>
-
 
 <td>
-${esc(c.insuredPlate) || "-"}
+${esc(c.insuredPlate)||"-"}
 </td>
-
 
 <td>
-${esc(c.eventDate || c.reportDate) || "-"}
+${esc(c.eventDate||c.reportDate)||"-"}
 </td>
-
 
 <td>
 
 <span
 class="status ${
-c.status === "Draft"
+c.status==="Draft"
 ?
 "draft"
 :
@@ -1823,7 +1672,6 @@ ${esc(c.status)}
 </span>
 
 </td>
-
 
 <td>
 
@@ -1839,29 +1687,31 @@ onclick="saved('${encodeURIComponent(c.id)}')">
 
 </tr>
 
-`
-).join("");
+`).join("");
 
 }
 
 
+/* PRINT SAVED CLAIM */
 
-function saved(encoded){
+function saved(id){
 
 let c =
 claims.find(
-x =>
-x.id ===
-decodeURIComponent(encoded)
+x=>x.id ===
+decodeURIComponent(id)
 );
 
+if(c){
 
-if(c)
 print(c);
 
 }
 
+}
 
+
+/* PRINT CURRENT */
 
 function printClaim(){
 
@@ -1870,6 +1720,7 @@ print(data());
 }
 
 
+/* PRINT */
 
 function print(c){
 
@@ -1878,7 +1729,6 @@ window.open(
 "",
 "_blank"
 );
-
 
 w.document.write(`
 
@@ -1892,14 +1742,12 @@ w.document.write(`
 ${esc(c.id)}
 </title>
 
-
 <style>
 
 body{
 
 font-family:
-Tahoma,
-Arial;
+Tahoma,Arial;
 
 padding:28px;
 
@@ -1944,8 +1792,7 @@ table{
 
 width:100%;
 
-border-collapse:
-collapse;
+border-collapse:collapse;
 
 }
 
@@ -2067,7 +1914,7 @@ ${esc(c.id)}
 </td>
 
 <td>
-${esc(c.policy) || "-"}
+${esc(c.policy)||"-"}
 </td>
 
 </tr>
@@ -2080,7 +1927,7 @@ ${esc(c.policy) || "-"}
 </td>
 
 <td>
-${esc(c.insurer) || "-"}
+${esc(c.insurer)||"-"}
 </td>
 
 <td>
@@ -2088,7 +1935,7 @@ Call Center
 </td>
 
 <td>
-${esc(c.callcenter) || "-"}
+${esc(c.callcenter)||"-"}
 </td>
 
 </tr>
@@ -2101,7 +1948,7 @@ ${esc(c.callcenter) || "-"}
 </td>
 
 <td>
-${esc(c.reporter) || "-"}
+${esc(c.reporter)||"-"}
 </td>
 
 <td>
@@ -2109,7 +1956,7 @@ ${esc(c.reporter) || "-"}
 </td>
 
 <td>
-${esc(c.phone) || "-"}
+${esc(c.phone)||"-"}
 </td>
 
 </tr>
@@ -2126,18 +1973,18 @@ ${esc(c.phone) || "-"}
 <br>
 
 ทะเบียน
-${esc(c.insuredPlate) || "-"}
+${esc(c.insuredPlate)||"-"}
 
 |
 
-${esc(c.insuredBrand) || "-"}
+${esc(c.insuredBrand)||"-"}
 
-${esc(c.insuredModel) || "-"}
+${esc(c.insuredModel)||"-"}
 
 |
 
 จังหวัด
-${esc(c.insuredProvince) || "-"}
+${esc(c.insuredProvince)||"-"}
 
 </div>
 
@@ -2151,26 +1998,26 @@ ${esc(c.insuredProvince) || "-"}
 <br>
 
 ทะเบียน
-${esc(c.thirdPlate) || "-"}
+${esc(c.thirdPlate)||"-"}
 
 |
 
-${esc(c.thirdBrand) || "-"}
+${esc(c.thirdBrand)||"-"}
 
-${esc(c.thirdModel) || "-"}
+${esc(c.thirdModel)||"-"}
 
 |
 
 จังหวัด
-${esc(c.thirdProvince) || "-"}
+${esc(c.thirdProvince)||"-"}
 
 <br>
 
 ผู้ขับขี่
-${esc(c.thirdDriver) || "-"}
+${esc(c.thirdDriver)||"-"}
 
 โทร
-${esc(c.thirdPhone) || "-"}
+${esc(c.thirdPhone)||"-"}
 
 </div>
 
@@ -2189,11 +2036,11 @@ ${esc(c.eventTime)}
 
 |
 
-${esc(c.eventPlace) || "-"}
+${esc(c.eventPlace)||"-"}
 
 <br>
 
-${esc(c.eventDetail) || "-"}
+${esc(c.eventDetail)||"-"}
 
 </div>
 
@@ -2205,15 +2052,10 @@ ${esc(c.eventDetail) || "-"}
 ${
 c.insuredDamage.length
 ?
-"<ol>" +
+"<ol>"+
 c.insuredDamage
-.map(
-x =>
-"<li>" +
-esc(x) +
-"</li>"
-)
-.join("") +
+.map(x=>"<li>"+esc(x)+"</li>")
+.join("")+
 "</ol>"
 :
 "-"
@@ -2221,11 +2063,9 @@ esc(x) +
 
 
 <p>
-
 ส่วนแรก
 ${esc(c.insuredExcess)}
 บาท
-
 </p>
 
 
@@ -2233,19 +2073,13 @@ ${esc(c.insuredExcess)}
 ความเสียหายรถคู่กรณี
 </h3>
 
-
 ${
 c.thirdDamage.length
 ?
-"<ol>" +
+"<ol>"+
 c.thirdDamage
-.map(
-x =>
-"<li>" +
-esc(x) +
-"</li>"
-)
-.join("") +
+.map(x=>"<li>"+esc(x)+"</li>")
+.join("")+
 "</ol>"
 :
 "-"
@@ -2253,11 +2087,9 @@ esc(x) +
 
 
 <p>
-
 ส่วนแรก
 ${esc(c.thirdExcess)}
 บาท
-
 </p>
 
 
@@ -2269,7 +2101,7 @@ ${esc(c.thirdExcess)}
 
 <br>
 
-${esc(c.damageNote) || "-"}
+${esc(c.damageNote)||"-"}
 
 </div>
 
@@ -2357,12 +2189,12 @@ onclick="window.print()">
 
 `);
 
-
 w.document.close();
 
 }
 
 
+/* SIGNATURE */
 
 function sig(id){
 
@@ -2379,28 +2211,24 @@ let last;
 
 function resize(){
 
-let rect =
+let r =
 canvas.getBoundingClientRect();
 
-let ratio =
+let q =
 window.devicePixelRatio || 1;
 
 canvas.width =
-rect.width * ratio;
+r.width*q;
 
 canvas.height =
-rect.height * ratio;
+r.height*q;
 
 ctx.setTransform(
-ratio,
-0,
-0,
-ratio,
-0,
-0
+q,0,0,q,0,0
 );
 
-ctx.lineWidth = 2.5;
+ctx.lineWidth =
+2.5;
 
 ctx.lineCap =
 "round";
@@ -2410,16 +2238,15 @@ ctx.strokeStyle =
 
 }
 
-
 resize();
 
 
-function position(e){
+function point(e){
 
-let rect =
+let r =
 canvas.getBoundingClientRect();
 
-let point =
+let p =
 e.touches
 ?
 e.touches[0]
@@ -2428,13 +2255,9 @@ e;
 
 return {
 
-x:
-point.clientX -
-rect.left,
+x:p.clientX-r.left,
 
-y:
-point.clientY -
-rect.top
+y:p.clientY-r.top
 
 };
 
@@ -2446,7 +2269,7 @@ function start(e){
 drawing = true;
 
 last =
-position(e);
+point(e);
 
 e.preventDefault();
 
@@ -2459,7 +2282,7 @@ if(!drawing)
 return;
 
 let p =
-position(e);
+point(e);
 
 ctx.beginPath();
 
@@ -2475,7 +2298,7 @@ p.y
 
 ctx.stroke();
 
-last = p;
+last=p;
 
 e.preventDefault();
 
@@ -2488,11 +2311,9 @@ start;
 canvas.onmousemove =
 move;
 
-
 window.addEventListener(
 "mouseup",
-() =>
-drawing = false
+()=>drawing=false
 );
 
 
@@ -2503,12 +2324,12 @@ canvas.ontouchmove =
 move;
 
 canvas.ontouchend =
-() =>
-drawing = false;
+()=>drawing=false;
 
 }
 
 
+/* CLEAR SIGNATURE */
 
 function clearSig(id){
 
@@ -2528,48 +2349,38 @@ canvas.height
 }
 
 
+/* FILE PREVIEW */
 
-$("files").onchange =
-() => {
+$("files").onchange = function(){
 
 $("preview").innerHTML = "";
 
-
 [
-...
-$("files").files
-]
-.forEach(
-file => {
+...$("files").files
+].forEach(file=>{
 
 if(
-file.type.startsWith(
-"image/"
-)
+file.type.startsWith("image/")
 ){
 
 let img =
-document.createElement(
-"img"
-);
+document.createElement("img");
 
 img.className =
 "thumb";
 
 img.src =
-URL.createObjectURL(
-file
-);
+URL.createObjectURL(file);
 
 $("preview")
 .appendChild(img);
 
-}else{
+}
+
+else{
 
 let div =
-document.createElement(
-"div"
-);
+document.createElement("div");
 
 div.className =
 "file-item";
@@ -2588,6 +2399,7 @@ $("preview")
 };
 
 
+/* START */
 
 init();
 
