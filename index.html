@@ -2,415 +2,403 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Claim Online | Infinity Survey</title>
 
 <style>
 *{
-  box-sizing:border-box;
-}
-
-:root{
-  --blue:#1769e0;
-  --blue2:#0b4ca8;
-  --bg:#f3f6fb;
-  --text:#18243a;
-  --muted:#68758a;
-  --line:#dce4ef;
-  --green:#16a34a;
-  --yellow:#f59e0b;
-  --red:#dc2626;
+    box-sizing:border-box;
 }
 
 body{
-  margin:0;
-  background:var(--bg);
-  font-family:"Segoe UI",Tahoma,Arial,sans-serif;
-  color:var(--text);
+    margin:0;
+    background:#f4f7fb;
+    font-family:Tahoma,"Segoe UI",Arial,sans-serif;
+    color:#172338;
 }
 
-/* ================= HEADER ================= */
-
 header{
-  background:linear-gradient(135deg,#0a3f91,#2186f3);
-  color:#fff;
-  padding:18px 5%;
-  position:sticky;
-  top:0;
-  z-index:10;
-  box-shadow:0 4px 18px #12345a30;
+    background:linear-gradient(135deg,#083f91,#2085ef);
+    color:white;
+    padding:15px 18px;
+    position:sticky;
+    top:0;
+    z-index:20;
+    box-shadow:0 4px 18px #102f5b30;
 }
 
 .head{
-  max-width:1150px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+    max-width:1180px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
 }
 
-.logo{
-  font-size:22px;
-  font-weight:900;
+.brand{
+    font-size:19px;
+    font-weight:900;
 }
 
-.sub{
-  font-size:12px;
-  opacity:.9;
-  margin-top:3px;
+.brand small{
+    display:block;
+    font-size:11px;
+    font-weight:500;
+    margin-top:3px;
+    opacity:.9;
+}
+
+.top{
+    display:flex;
+    gap:7px;
+}
+
+.btn{
+    border:0;
+    border-radius:10px;
+    padding:11px 15px;
+    font-weight:800;
+    cursor:pointer;
+}
+
+.white{
+    background:white;
+    color:#0b4ca8;
+}
+
+.primary{
+    background:#1267d9;
+    color:white;
+}
+
+.secondary{
+    background:#eaf1fb;
+    color:#124d91;
+}
+
+.success{
+    background:#16a34a;
+    color:white;
+}
+
+.danger{
+    background:#fee2e2;
+    color:#991b1b;
 }
 
 .container{
-  max-width:1150px;
-  margin:25px auto;
-  padding:0 16px;
+    max-width:1180px;
+    margin:20px auto;
+    padding:0 14px;
 }
 
-/* ================= STEPS ================= */
-
 .steps{
-  display:flex;
-  gap:7px;
-  overflow:auto;
-  margin-bottom:18px;
+    display:flex;
+    gap:7px;
+    overflow:auto;
+    margin-bottom:16px;
 }
 
 .step{
-  min-width:120px;
-  background:#fff;
-  border:1px solid var(--line);
-  padding:10px 13px;
-  border-radius:12px;
-  text-align:center;
-  font-size:13px;
-  font-weight:800;
-  color:#738096;
+    min-width:115px;
+    text-align:center;
+    padding:10px;
+    border:1px solid #dbe4ef;
+    border-radius:12px;
+    background:white;
+    color:#77849a;
+    font-size:12px;
+    font-weight:900;
 }
 
 .step.active{
-  background:var(--blue);
-  color:#fff;
-  border-color:var(--blue);
+    background:#1267d9;
+    color:white;
+    border-color:#1267d9;
 }
 
 .step.done{
-  background:#e8f7ee;
-  color:var(--green);
-  border-color:#b9e3c7;
+    background:#eaf8ef;
+    color:#15803d;
 }
 
-/* ================= CARD ================= */
-
 .card{
-  background:#fff;
-  border-radius:18px;
-  padding:24px;
-  margin-bottom:18px;
-  box-shadow:0 6px 24px #18375d10;
+    background:white;
+    border:1px solid #e8edf4;
+    border-radius:17px;
+    padding:22px;
+    margin-bottom:16px;
+    box-shadow:0 5px 22px #17375e0c;
 }
 
 h1{
-  font-size:26px;
-  margin:0 0 6px;
+    font-size:24px;
+    margin:0 0 5px;
 }
 
 h2{
-  font-size:19px;
-  margin:0 0 16px;
+    font-size:18px;
 }
 
 .muted{
-  color:var(--muted);
-  font-size:13px;
+    color:#6b778c;
+    font-size:13px;
 }
 
-/* ================= FORM ================= */
-
 .grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:15px;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px;
 }
 
 .full{
-  grid-column:1/-1;
+    grid-column:1/-1;
 }
 
 label{
-  display:block;
-  font-size:13px;
-  font-weight:800;
-  margin:0 0 7px;
+    display:block;
+    font-size:13px;
+    font-weight:800;
+    margin-bottom:6px;
 }
 
 input,
 select,
 textarea{
-  width:100%;
-  border:1px solid var(--line);
-  border-radius:11px;
-  padding:12px;
-  font-size:15px;
-  outline:none;
-  background:#fff;
-}
-
-input:focus,
-select:focus,
-textarea:focus{
-  border-color:var(--blue);
-  box-shadow:0 0 0 3px #1769e014;
+    width:100%;
+    border:1px solid #dbe4ef;
+    border-radius:10px;
+    padding:11px;
+    font:inherit;
+    background:white;
+    outline:none;
 }
 
 textarea{
-  min-height:105px;
-  resize:vertical;
+    min-height:100px;
+    resize:vertical;
 }
-
-/* ================= BUTTON ================= */
-
-.btn{
-  border:0;
-  border-radius:11px;
-  padding:12px 18px;
-  font-weight:900;
-  cursor:pointer;
-}
-
-.primary{
-  background:var(--blue);
-  color:#fff;
-}
-
-.secondary{
-  background:#eaf1fb;
-  color:#164e91;
-}
-
-.danger{
-  background:#fee2e2;
-  color:#991b1b;
-}
-
-.success{
-  background:var(--green);
-  color:#fff;
-}
-
-.actions{
-  display:flex;
-  gap:10px;
-  justify-content:flex-end;
-  flex-wrap:wrap;
-  margin-top:20px;
-}
-
-/* ================= EVENT ================= */
 
 .event{
-  border:1px solid var(--line);
-  border-radius:15px;
-  padding:17px;
-  margin-bottom:15px;
-  background:#fbfdff;
-}
-
-.event-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:13px;
+    border:1px solid #dbe4ef;
+    border-radius:14px;
+    padding:16px;
+    margin:13px 0;
+    background:#fbfdff;
 }
 
 .damage-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
 }
-
-/* ================= SIGNATURE ================= */
-
-.signature{
-  width:100%;
-  height:170px;
-  border:2px dashed #9db4d3;
-  border-radius:12px;
-  background:#fcfdff;
-  touch-action:none;
-}
-
-/* ================= FILE ================= */
 
 .filebox{
-  border:2px dashed #b6c7dd;
-  border-radius:14px;
-  padding:22px;
-  text-align:center;
+    border:2px dashed #abc1dc;
+    border-radius:14px;
+    padding:20px;
+    text-align:center;
 }
 
 .preview{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:12px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:12px;
 }
 
 .thumb{
-  width:105px;
-  height:105px;
-  border-radius:10px;
-  object-fit:cover;
-  border:1px solid var(--line);
+    width:110px;
+    height:110px;
+    object-fit:cover;
+    border:1px solid #dbe4ef;
+    border-radius:10px;
 }
 
-/* ================= REVIEW ================= */
+.file-item{
+    padding:10px;
+    border:1px solid #dbe4ef;
+    border-radius:10px;
+    font-size:12px;
+}
+
+.signature{
+    width:100%;
+    height:170px;
+    border:2px dashed #9fb8d7;
+    border-radius:12px;
+    touch-action:none;
+}
+
+.actions{
+    display:flex;
+    justify-content:flex-end;
+    gap:9px;
+    flex-wrap:wrap;
+    margin-top:18px;
+}
+
+.notice{
+    padding:12px 14px;
+    background:#eff6ff;
+    border-left:4px solid #1267d9;
+    border-radius:8px;
+    font-size:13px;
+}
 
 .review{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
 }
 
 .review div{
-  padding:12px;
-  background:#f7f9fc;
-  border-radius:10px;
+    background:#f7f9fc;
+    padding:11px;
+    border-radius:9px;
 }
 
 .review b{
-  display:block;
-  font-size:12px;
-  color:var(--muted);
-  margin-bottom:4px;
+    display:block;
+    font-size:11px;
+    color:#6b778c;
+    margin-bottom:3px;
 }
 
-/* ================= TABLE ================= */
+.table-wrap{
+    overflow:auto;
+}
 
 table{
-  width:100%;
-  border-collapse:collapse;
+    width:100%;
+    border-collapse:collapse;
+    min-width:720px;
 }
 
 th,
 td{
-  padding:12px;
-  text-align:left;
-  border-bottom:1px solid #edf0f5;
-  font-size:13px;
+    padding:10px;
+    border-bottom:1px solid #e9edf3;
+    text-align:left;
+    font-size:13px;
 }
 
 th{
-  background:#f7f9fc;
+    background:#f7f9fc;
 }
 
 .status{
-  display:inline-block;
-  padding:5px 10px;
-  border-radius:999px;
-  font-size:12px;
-  font-weight:900;
-}
-
-.pending{
-  background:#fff4cf;
-  color:#946200;
+    border-radius:999px;
+    padding:5px 9px;
+    font-size:11px;
+    font-weight:900;
 }
 
 .draft{
-  background:#eaf1fb;
-  color:#164e91;
+    background:#eaf1fb;
+    color:#16559d;
 }
 
-.notice{
-  padding:12px 14px;
-  background:#eff6ff;
-  border-left:4px solid var(--blue);
-  border-radius:8px;
-  font-size:13px;
-  margin-bottom:15px;
+.pending{
+    background:#fff4d6;
+    color:#8a5b00;
 }
 
 .hidden{
-  display:none!important;
+    display:none!important;
 }
 
-/* ================= MOBILE ================= */
+.footer{
+    text-align:center;
+    color:#7b8798;
+    font-size:12px;
+    padding:18px;
+}
 
 @media(max-width:700px){
 
-  .grid,
-  .review{
-    grid-template-columns:1fr;
-  }
+    .grid,
+    .review{
+        grid-template-columns:1fr;
+    }
 
-  .full{
-    grid-column:auto;
-  }
+    .full{
+        grid-column:auto;
+    }
 
-  .damage-grid{
-    grid-template-columns:1fr;
-  }
+    .damage-grid{
+        grid-template-columns:1fr;
+    }
 
-  .head{
-    align-items:flex-start;
-  }
+    .brand{
+        font-size:15px;
+    }
 
-  .sub{
-    display:block;
-  }
+    .top .btn{
+        padding:9px;
+    }
 
-  .card{
-    padding:18px;
-  }
+    .card{
+        padding:17px;
+    }
 
-  h1{
-    font-size:22px;
-  }
+    h1{
+        font-size:21px;
+    }
 
-  .step{
-    min-width:105px;
-  }
+    .step{
+        min-width:100px;
+    }
+}
 
+@media print{
+
+    header,
+    .steps,
+    .no-print,
+    #tracking{
+        display:none!important;
+    }
+
+    .container{
+        margin:0;
+        padding:0;
+    }
+
+    .card{
+        box-shadow:none;
+        border:0;
+    }
 }
 </style>
 </head>
 
-
 <body>
-
-<!-- ================= HEADER ================= -->
 
 <header>
 
 <div class="head">
 
-<div>
+<div class="brand">
 
-<div class="logo">
 INFINITY SURVEY LIMITED PARTNERSHIP
-</div>
 
-<div class="sub">
+<small>
 ห้างหุ้นส่วนจำกัด อินฟินิตี้ เซอร์เวย์ |
-ระบบแจ้งเคลมออนไลน์
-</div>
+CLAIM ONLINE
+</small>
 
 </div>
 
-<div style="display:flex;gap:8px">
+<div class="top no-print">
 
-<button
-class="btn secondary"
-style="background:#fff;color:#0b4ca8"
-onclick="saveDraft()">
+<button class="btn white" onclick="saveDraft()">
 💾 บันทึก
 </button>
 
-<button
-class="btn secondary"
-style="background:#fff;color:#0b4ca8"
-onclick="printCurrent()">
+<button class="btn white" onclick="printClaim()">
 🖨️ ปริ้น
 </button>
 
@@ -424,9 +412,9 @@ onclick="printCurrent()">
 <div class="container">
 
 
-<!-- ================= STEPS ================= -->
+<!-- STEP -->
 
-<div class="steps">
+<div class="steps no-print">
 
 <div class="step active">
 ① ข้อมูลเคลม
@@ -455,108 +443,103 @@ onclick="printCurrent()">
 </div>
 
 
-<!-- =====================================================
-STEP 1
-===================================================== -->
+<!-- SECTION 1 -->
 
 <section id="s1" class="card">
 
 <h1>
-📄 ข้อมูลการแจ้งเคลม
+📄 ข้อมูลใบแจ้งความเสียหาย
 </h1>
 
 <p class="muted">
-กรอกข้อมูลหลักของเอกสารแจ้งเคลมเพิ่มเติม
+กรอกข้อมูลจากใบแจ้งความเสียหายของบริษัทประกัน
 </p>
 
 
 <div class="grid">
 
-
 <div>
 
-<label>
-เลขรับแจ้ง *
-</label>
+<label>เลขที่แจ้ง</label>
 
-<input
-id="claimNo"
-placeholder="เช่น CLM-2026-0001">
+<input id="claimNo">
 
 </div>
 
 
 <div>
 
-<label>
-เลขกรมธรรม์ *
-</label>
+<label>เลขกรมธรรม์</label>
 
-<input
-id="policyNo"
-placeholder="เลขกรมธรรม์">
+<input id="policyNo">
 
 </div>
 
 
 <div>
 
-<label>
-ชื่อผู้แจ้ง *
-</label>
+<label>วันที่แจ้ง</label>
 
-<input
-id="reporter"
-placeholder="ชื่อ-นามสกุล">
+<input id="reportDate" type="date">
 
 </div>
 
 
 <div>
 
-<label>
-เบอร์โทรศัพท์
-</label>
+<label>เวลา</label>
 
-<input
-id="phone"
-placeholder="08x-xxx-xxxx">
+<input id="reportTime" type="time">
 
 </div>
 
 
 <div>
 
-<label>
-บริษัทประกัน
-</label>
+<label>บริษัทประกัน</label>
 
-<input
-id="company"
-placeholder="ชื่อบริษัท">
+<input id="insurer">
 
 </div>
 
 
 <div>
 
-<label>
-ประเภทเคลม
-</label>
+<label>Call Center</label>
 
-<select id="claimType">
+<input id="callcenter">
 
-<option>
-อุบัติเหตุรถยนต์
-</option>
+</div>
 
-<option>
-ทรัพย์สินเสียหาย
-</option>
 
-<option>
-อื่น ๆ
-</option>
+<div>
+
+<label>ผู้แจ้ง</label>
+
+<input id="reporter">
+
+</div>
+
+
+<div>
+
+<label>เบอร์โทรศัพท์</label>
+
+<input id="phone">
+
+</div>
+
+
+<div>
+
+<label>ประเภทประกัน</label>
+
+<select id="insuranceType">
+
+<option>ประเภท 1</option>
+<option>ประเภท 2+</option>
+<option>ประเภท 3+</option>
+<option>อื่น ๆ</option>
 
 </select>
 
@@ -565,87 +548,231 @@ placeholder="ชื่อบริษัท">
 
 <div>
 
-<label>
-วันที่แจ้ง
-</label>
+<label>ประเภทเคลม</label>
 
-<input
-id="reportDate"
-type="date">
+<select id="claimType">
+
+<option>รถประกัน + รถคู่กรณี</option>
+<option>รถประกัน</option>
+<option>ทรัพย์สิน</option>
+<option>อื่น ๆ</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<div class="actions no-print">
+
+<button class="btn primary"
+onclick="go(2)">
+
+ถัดไป →
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- SECTION 2 -->
+
+<section id="s2" class="card hidden">
+
+<h1>
+🚗 ข้อมูลรถและเหตุการณ์
+</h1>
+
+<p class="muted">
+รองรับรถประกันและรถคู่กรณี
+</p>
+
+
+<h2>
+รถประกัน
+</h2>
+
+
+<div class="grid">
+
+<div>
+
+<label>ทะเบียน</label>
+
+<input id="insuredPlate">
 
 </div>
 
 
 <div>
 
+<label>จังหวัด</label>
+
+<input id="insuredProvince">
+
+</div>
+
+
+<div>
+
+<label>ยี่ห้อ</label>
+
+<input id="insuredBrand">
+
+</div>
+
+
+<div>
+
+<label>รุ่น</label>
+
+<input id="insuredModel">
+
+</div>
+
+
+<div>
+
+<label>เลขอ้างอิง</label>
+
+<input id="insuredRef">
+
+</div>
+
+</div>
+
+
+<h2 style="margin-top:22px">
+
+รถคู่กรณี
+
+</h2>
+
+
+<div class="grid">
+
+<div>
+
+<label>ทะเบียน</label>
+
+<input id="thirdPlate">
+
+</div>
+
+
+<div>
+
+<label>จังหวัด</label>
+
+<input id="thirdProvince">
+
+</div>
+
+
+<div>
+
+<label>ยี่ห้อ</label>
+
+<input id="thirdBrand">
+
+</div>
+
+
+<div>
+
+<label>รุ่น</label>
+
+<input id="thirdModel">
+
+</div>
+
+
+<div>
+
+<label>ชื่อผู้ขับขี่</label>
+
+<input id="thirdDriver">
+
+</div>
+
+
+<div>
+
+<label>โทรศัพท์</label>
+
+<input id="thirdPhone">
+
+</div>
+
+</div>
+
+
+<div class="event">
+
+<div class="grid">
+
+<div>
+
+<label>วันที่เกิดเหตุ</label>
+
+<input id="eventDate" type="date">
+
+</div>
+
+
+<div>
+
+<label>เวลาเกิดเหตุ</label>
+
+<input id="eventTime" type="time">
+
+</div>
+
+
+<div class="full">
+
 <label>
-สถานะ
+สถานที่เกิดเหตุ
 </label>
 
-<input
-value="รอตรวจสอบ"
-disabled>
+<input id="eventPlace">
 
 </div>
 
 
-</div>
+<div class="full">
 
+<label>
+ลักษณะการเกิดอุบัติเหตุ
+</label>
 
-<div class="actions">
-
-<button
-class="btn primary"
-onclick="next(1)">
-ถัดไป →
-</button>
+<textarea id="eventDetail"></textarea>
 
 </div>
 
-</section>
+</div>
+
+</div>
 
 
+<div class="actions no-print">
 
-<!-- =====================================================
-STEP 2
-===================================================== -->
+<button class="btn secondary"
+onclick="go(1)">
 
-<section
-id="s2"
-class="card hidden">
-
-<h1>
-🚗 ข้อมูลเหตุการณ์
-</h1>
-
-<p class="muted">
-กรอกข้อมูลตามเอกสารแจ้งเคลมเพิ่มเติม
-</p>
-
-<div id="events"></div>
-
-
-<button
-class="btn secondary"
-onclick="addEvent()">
-
-＋ เพิ่มเหตุการณ์
-
-</button>
-
-
-<div class="actions">
-
-<button
-class="btn secondary"
-onclick="next(0)">
 ← ย้อนกลับ
+
 </button>
 
-<button
-class="btn primary"
-onclick="next(2)">
+<button class="btn primary"
+onclick="go(3)">
+
 ถัดไป →
+
 </button>
 
 </div>
@@ -654,37 +781,91 @@ onclick="next(2)">
 
 
 
-<!-- =====================================================
-STEP 3
-===================================================== -->
+<!-- SECTION 3 -->
 
-<section
-id="s3"
-class="card hidden">
+<section id="s3" class="card hidden">
 
 <h1>
 💥 รายการความเสียหาย
 </h1>
 
 <p class="muted">
-รองรับรายการความเสียหาย 1–9 รายการต่อเหตุการณ์
+กรอกเฉพาะรายการที่พบจริง
 </p>
 
-<div id="damageWrap"></div>
+
+<div class="event">
+
+<h2>
+รถประกัน
+</h2>
+
+<div id="insuredDamage"
+class="damage-grid">
+</div>
 
 
-<div class="actions">
+<label style="margin-top:12px">
 
-<button
-class="btn secondary"
-onclick="next(1)">
+ความเสียหายส่วนแรก (บาท)
+
+</label>
+
+<input
+id="insuredExcess"
+type="number"
+min="0">
+
+</div>
+
+
+
+<div class="event">
+
+<h2>
+รถคู่กรณี
+</h2>
+
+<div id="thirdDamage"
+class="damage-grid">
+</div>
+
+
+<label style="margin-top:12px">
+
+ความเสียหายส่วนแรก (บาท)
+
+</label>
+
+<input
+id="thirdExcess"
+type="number"
+min="0">
+
+</div>
+
+
+<label>
+หมายเหตุเพิ่มเติม
+</label>
+
+<textarea id="damageNote"></textarea>
+
+
+<div class="actions no-print">
+
+<button class="btn secondary"
+onclick="go(2)">
+
 ← ย้อนกลับ
+
 </button>
 
-<button
-class="btn primary"
-onclick="next(3)">
+<button class="btn primary"
+onclick="go(4)">
+
 ถัดไป →
+
 </button>
 
 </div>
@@ -693,22 +874,19 @@ onclick="next(3)">
 
 
 
-<!-- =====================================================
-STEP 4
-===================================================== -->
+<!-- SECTION 4 -->
 
-<section
-id="s4"
-class="card hidden">
+<section id="s4" class="card hidden">
 
 <h1>
 📷 หลักฐานความเสียหาย
 </h1>
 
+
 <div class="notice">
 
-สามารถเลือกไฟล์จากมือถือ
-หรือเปิดกล้องเพื่อถ่ายภาพหลักฐานได้
+กดเลือกไฟล์จากมือถือเพื่อถ่ายภาพได้
+รองรับรูปและ PDF
 
 </div>
 
@@ -716,16 +894,16 @@ class="card hidden">
 <div class="filebox">
 
 <input
-id="photos"
+id="files"
 type="file"
 accept="image/*,.pdf"
 multiple
 capture="environment">
 
+
 <p class="muted">
 
-📷 รูปความเสียหาย /
-📎 PDF / เอกสารเพิ่มเติม
+📸 รูปรถ • ใบแจ้งความเสียหาย • เอกสารประกอบ
 
 </p>
 
@@ -733,23 +911,25 @@ capture="environment">
 
 
 <div
-class="preview"
-id="preview">
+id="preview"
+class="preview">
 </div>
 
 
-<div class="actions">
+<div class="actions no-print">
 
-<button
-class="btn secondary"
-onclick="next(2)">
+<button class="btn secondary"
+onclick="go(3)">
+
 ← ย้อนกลับ
+
 </button>
 
-<button
-class="btn primary"
-onclick="next(4)">
+<button class="btn primary"
+onclick="go(5)">
+
 ถัดไป →
+
 </button>
 
 </div>
@@ -758,20 +938,16 @@ onclick="next(4)">
 
 
 
-<!-- =====================================================
-STEP 5
-===================================================== -->
+<!-- SECTION 5 -->
 
-<section
-id="s5"
-class="card hidden">
+<section id="s5" class="card hidden">
 
 <h1>
-✍️ เซ็นออนไลน์
+✍️ เซ็นเอกสารออนไลน์
 </h1>
 
 <p class="muted">
-เซ็นด้วยนิ้วบนมือถือ หรือใช้เมาส์บนคอมพิวเตอร์
+เซ็นด้วยนิ้วหรือเมาส์
 </p>
 
 
@@ -780,18 +956,18 @@ class="card hidden">
 
 <div>
 
-<h2>
-ลายเซ็นผู้ตรวจสอบ
-</h2>
+<b>
+ผู้ปฏิบัติงาน / ผู้ตรวจสอบ
+</b>
 
 <canvas
-class="signature"
-id="sigInspector">
+id="sig1"
+class="signature">
 </canvas>
 
 <button
-class="btn secondary"
-onclick="clearSig('sigInspector')">
+class="btn secondary no-print"
+onclick="clearSig('sig1')">
 
 🧹 ล้าง
 
@@ -803,18 +979,18 @@ onclick="clearSig('sigInspector')">
 
 <div>
 
-<h2>
-ลายเซ็นผู้ขับขี่รถประกัน / ผู้รับหลักฐาน
-</h2>
+<b>
+ผู้รับหลักฐาน / ผู้ขับขี่
+</b>
 
 <canvas
-class="signature"
-id="sigDriver">
+id="sig2"
+class="signature">
 </canvas>
 
 <button
-class="btn secondary"
-onclick="clearSig('sigDriver')">
+class="btn secondary no-print"
+onclick="clearSig('sig2')">
 
 🧹 ล้าง
 
@@ -822,22 +998,56 @@ onclick="clearSig('sigDriver')">
 
 </div>
 
+</div>
+
+
+<div
+class="grid"
+style="margin-top:15px">
+
+<div>
+
+<label>
+วันที่ลงนาม
+</label>
+
+<input
+id="signDate"
+type="date">
 
 </div>
 
 
-<div class="actions">
+<div>
+
+<label>
+หมายเหตุ
+</label>
+
+<input
+id="signNote">
+
+</div>
+
+</div>
+
+
+<div class="actions no-print">
 
 <button
 class="btn secondary"
-onclick="next(3)">
+onclick="go(4)">
+
 ← ย้อนกลับ
+
 </button>
 
 <button
 class="btn primary"
-onclick="next(5)">
-ตรวจสอบข้อมูล →
+onclick="go(6)">
+
+ตรวจสอบ →
+
 </button>
 
 </div>
@@ -846,21 +1056,13 @@ onclick="next(5)">
 
 
 
-<!-- =====================================================
-STEP 6
-===================================================== -->
+<!-- SECTION 6 -->
 
-<section
-id="s6"
-class="card hidden">
+<section id="s6" class="card hidden">
 
 <h1>
-🔎 ตรวจสอบก่อนส่ง
+🔎 ตรวจสอบก่อนบันทึก
 </h1>
-
-<p class="muted">
-ตรวจสอบข้อมูลทั้งหมดก่อนสร้างเอกสาร PDF
-</p>
 
 
 <div
@@ -869,36 +1071,42 @@ class="review">
 </div>
 
 
-<div class="actions">
-
+<div class="actions no-print">
 
 <button
 class="btn secondary"
-onclick="next(4)">
+onclick="go(5)">
+
 ← แก้ไข
+
 </button>
 
 
 <button
 class="btn secondary"
 onclick="saveDraft()">
+
 💾 บันทึกแบบร่าง
+
 </button>
 
 
 <button
 class="btn success"
 onclick="submitClaim()">
+
 ✅ บันทึก Claim
+
 </button>
 
 
 <button
 class="btn primary"
-onclick="generatePDF()">
-📄 Generate / ปริ้น PDF
-</button>
+onclick="printClaim()">
 
+📄 ปริ้น / Save PDF
+
+</button>
 
 </div>
 
@@ -906,9 +1114,7 @@ onclick="generatePDF()">
 
 
 
-<!-- =====================================================
-TRACKING
-===================================================== -->
+<!-- TRACKING -->
 
 <section
 id="tracking"
@@ -921,17 +1127,16 @@ class="card">
 
 <div class="grid">
 
-
 <div>
 
 <label>
-ค้นหา Claim
+ค้นหา
 </label>
 
 <input
 id="search"
 oninput="renderClaims()"
-placeholder="เลขเคลม / ชื่อ / กรมธรรม์">
+placeholder="เลขเคลม / ผู้แจ้ง / ทะเบียน">
 
 </div>
 
@@ -939,21 +1144,21 @@ placeholder="เลขเคลม / ชื่อ / กรมธรรม์">
 <div>
 
 <label>
-จำนวน Claim
+จำนวนรายการ
 </label>
 
 <input
-id="stat"
+id="count"
 disabled>
 
 </div>
-
 
 </div>
 
 
 <div
-style="overflow:auto;margin-top:15px">
+class="table-wrap"
+style="margin-top:15px">
 
 <table>
 
@@ -962,7 +1167,7 @@ style="overflow:auto;margin-top:15px">
 <tr>
 
 <th>
-Claim No.
+เลขเคลม
 </th>
 
 <th>
@@ -970,7 +1175,7 @@ Claim No.
 </th>
 
 <th>
-กรมธรรม์
+ทะเบียน
 </th>
 
 <th>
@@ -1001,627 +1206,315 @@ id="claimTable">
 </section>
 
 
+<div class="footer">
+
+Infinity Survey Limited Partnership
+•
+Claim Online
+
+</div>
+
 </div>
 
 
 
 <script>
 
-/* =====================================================
-DATA
-===================================================== */
-
 const $ = id =>
 document.getElementById(id);
 
 
-let events = [
-
-{
- id:1,
- date:'',
- time:'',
- place:'',
- detail:'',
- first:''
-}
-
-];
-
-
-let damage = [[]];
-
-
 let claims =
 JSON.parse(
-localStorage.getItem(
-'claim_online_v2'
-) || '[]'
+localStorage.getItem("infinity_claims") || "[]"
 );
 
 
-/* =====================================================
-DEFAULT CLAIM NUMBER
-===================================================== */
-
-$('reportDate').value =
-new Date()
-.toISOString()
-.slice(0,10);
+const today = () =>
+new Date().toISOString().slice(0,10);
 
 
-$('claimNo').value =
-'CLM-' +
+const generateClaimNo = () =>
+"CLM-" +
 new Date().getFullYear() +
-'-' +
+"-" +
 String(Date.now()).slice(-6);
 
 
 
-/* =====================================================
-STEP NAVIGATION
-===================================================== */
+function init(){
 
-function next(n){
+$("reportDate").value = today();
 
-document
-.querySelectorAll('[id^="s"]')
-.forEach(x =>
-x.classList.add('hidden')
+$("eventDate").value = today();
+
+$("signDate").value = today();
+
+$("claimNo").value =
+generateClaimNo();
+
+damage(
+"insuredDamage",
+"i"
 );
 
-$('s'+(n+1))
-.classList.remove('hidden');
-
-
-document
-.querySelectorAll('.step')
-.forEach((x,i)=>{
-
-x.classList.toggle(
-'active',
-i===n
+damage(
+"thirdDamage",
+"t"
 );
 
-x.classList.toggle(
-'done',
-i<n
-);
+sig("sig1");
 
-});
+sig("sig2");
 
-
-if(n===2)
-renderDamage();
-
-
-if(n===5)
-buildReview();
-
-
-window.scrollTo({
-top:0,
-behavior:'smooth'
-});
+renderClaims();
 
 }
 
 
 
-/* =====================================================
-EVENT
-===================================================== */
+function damage(id,p){
 
-function addEvent(){
+let html = "";
 
-events.push({
+for(
+let i=1;
+i<=9;
+i++
+){
 
-id:events.length+1,
-date:'',
-time:'',
-place:'',
-detail:'',
-first:''
-
-});
-
-renderEvents();
-
-}
-
-
-function removeEvent(i){
-
-events.splice(i,1);
-
-damage.splice(i,1);
-
-renderEvents();
-
-renderDamage();
-
-}
-
-
-function renderEvents(){
-
-$('events').innerHTML =
-events.map((e,i)=>`
-
-<div class="event">
-
-<div class="event-head">
-
-<b>
-เหตุการณ์ที่ ${i+1}
-</b>
-
-${i ?
-`
-<button
-class="btn danger"
-onclick="removeEvent(${i})">
-ลบ
-</button>
-`
-:''}
-
-</div>
-
-
-<div class="grid">
-
+html += `
 
 <div>
 
 <label>
-วันที่เกิดเหตุ
+${i}. รายการ
 </label>
 
 <input
-type="date"
-value="${e.date}"
-onchange="
-events[${i}].date=this.value
-">
-
-</div>
-
-
-<div>
-
-<label>
-เวลา
-</label>
-
-<input
-type="time"
-value="${e.time}"
-onchange="
-events[${i}].time=this.value
-">
-
-</div>
-
-
-<div>
-
-<label>
-สถานที่เกิดเหตุ
-</label>
-
-<input
-value="${e.place}"
-onchange="
-events[${i}].place=this.value
-">
-
-</div>
-
-
-<div class="full">
-
-<label>
-ลักษณะการเกิดอุบัติเหตุ
-</label>
-
-<textarea
-onchange="
-events[${i}].detail=this.value
-">${e.detail}</textarea>
-
-</div>
-
-
-</div>
-
-</div>
-
-`).join('');
-
-}
-
-
-renderEvents();
-
-
-
-/* =====================================================
-DAMAGE
-===================================================== */
-
-function renderDamage(){
-
-$('damageWrap').innerHTML =
-
-events.map((e,i)=>{
-
-if(!damage[i])
-damage[i]=[];
-
-while(
-damage[i].length<9
-)
-damage[i].push('');
-
-
-return `
-
-<div class="event">
-
-<div class="event-head">
-
-<b>
-เหตุการณ์ที่ ${i+1}
-</b>
-
-</div>
-
-
-<div class="damage-grid">
-
-${damage[i]
-.map((v,j)=>`
-
-<div>
-
-<label>
-${j+1}. ความเสียหาย
-</label>
-
-<input
-value="${v}"
-placeholder="รายละเอียด"
-onchange="
-damage[${i}][${j}]=this.value
-">
-
-</div>
-
-`).join('')}
-
-</div>
-
-
-<div
-style="margin-top:12px">
-
-<label>
-เรียกเก็บความเสียหายส่วนแรก (บาท)
-</label>
-
-<input
-type="number"
-min="0"
-value="${e.first||''}"
-onchange="
-events[${i}].first=this.value
-">
-
-</div>
-
+id="${p}${i}"
+placeholder="รายละเอียดความเสียหาย">
 
 </div>
 
 `;
 
-}).join('');
-
 }
 
-
-renderDamage();
-
-
-
-/* =====================================================
-SIGNATURE
-===================================================== */
-
-function setupCanvas(id){
-
-const c = $(id);
-
-const ctx =
-c.getContext('2d');
-
-let drawing=false;
-
-let last={
-x:0,
-y:0
-};
-
-
-function resize(){
-
-const r =
-c.getBoundingClientRect();
-
-const ratio =
-Math.max(
-devicePixelRatio||1,
-1
-);
-
-c.width =
-r.width*ratio;
-
-c.height =
-r.height*ratio;
-
-ctx.scale(
-ratio,
-ratio
-);
-
-ctx.lineWidth=2.5;
-
-ctx.lineCap='round';
-
-ctx.strokeStyle='#123d72';
-
-}
-
-
-resize();
-
-
-function pos(e){
-
-const r =
-c.getBoundingClientRect();
-
-const p =
-e.touches
-?
-e.touches[0]
-:
-e;
-
-return {
-
-x:p.clientX-r.left,
-
-y:p.clientY-r.top
-
-};
-
-}
-
-
-function start(e){
-
-drawing=true;
-
-last=pos(e);
-
-e.preventDefault();
-
-}
-
-
-function move(e){
-
-if(!drawing)
-return;
-
-let p=pos(e);
-
-ctx.beginPath();
-
-ctx.moveTo(
-last.x,
-last.y
-);
-
-ctx.lineTo(
-p.x,
-p.y
-);
-
-ctx.stroke();
-
-last=p;
-
-e.preventDefault();
-
-}
-
-
-c.addEventListener(
-'mousedown',
-start
-);
-
-c.addEventListener(
-'mousemove',
-move
-);
-
-window.addEventListener(
-'mouseup',
-()=>drawing=false
-);
-
-
-c.addEventListener(
-'touchstart',
-start,
-{passive:false}
-);
-
-c.addEventListener(
-'touchmove',
-move,
-{passive:false}
-);
-
-c.addEventListener(
-'touchend',
-()=>drawing=false
-);
-
-}
-
-
-setupCanvas(
-'sigInspector'
-);
-
-setupCanvas(
-'sigDriver'
-);
-
-
-
-function clearSig(id){
-
-const c=$(id);
-
-const ctx=
-c.getContext('2d');
-
-ctx.clearRect(
-0,
-0,
-c.width,
-c.height
-);
+$(id).innerHTML = html;
 
 }
 
 
 
-/* =====================================================
-PHOTO
-===================================================== */
+function go(n){
 
-$('photos')
-.addEventListener(
-'change',
-()=>{
+for(
+let i=1;
+i<=6;
+i++
+){
 
-$('preview').innerHTML='';
-
-
-[
-...$('photos').files
-]
-.forEach(f=>{
-
-if(
-f.type.startsWith(
-'image/'
-)){
-
-const img =
-document.createElement(
-'img'
+$("s"+i)
+.classList
+.toggle(
+"hidden",
+i !== n
 );
-
-img.className='thumb';
-
-img.src =
-URL.createObjectURL(f);
-
-$('preview')
-.appendChild(img);
 
 }
 
-else{
 
-const d =
-document.createElement(
-'div'
+document
+.querySelectorAll(".step")
+.forEach(
+(x,i)=>{
+
+x.classList.toggle(
+"active",
+i === n-1
 );
 
-d.className='thumb';
+x.classList.toggle(
+"done",
+i < n-1
+);
 
-d.style.display='grid';
+}
+);
 
-d.style.placeItems='center';
 
-d.textContent =
-'📄 '+f.name.slice(0,12);
+if(n === 6){
 
-$('preview')
-.appendChild(d);
+review();
 
 }
 
+
+scrollTo({
+top:0,
+behavior:"smooth"
 });
 
 }
+
+
+
+function esc(v){
+
+return String(v ?? "")
+.replace(
+/[&<>"']/g,
+m =>
+({
+"&":"&amp;",
+"<":"&lt;",
+">":"&gt;",
+'"':"&quot;",
+"'":"&#039;"
+}[m])
 );
-
-
-
-/* =====================================================
-COLLECT
-===================================================== */
-
-function val(id){
-
-return $(id).value || '-';
 
 }
 
 
-function collect(){
+
+function arr(prefix){
+
+let a = [];
+
+for(
+let i=1;
+i<=9;
+i++
+){
+
+let value =
+$(prefix+i)
+.value
+.trim();
+
+if(value)
+a.push(value);
+
+}
+
+return a;
+
+}
+
+
+
+function data(){
 
 return {
 
-id:val('claimNo'),
+id:$("claimNo").value ||
+generateClaimNo(),
 
-policy:val('policyNo'),
+policy:$("policyNo").value,
 
-reporter:val('reporter'),
+reportDate:
+$("reportDate").value,
 
-phone:val('phone'),
+reportTime:
+$("reportTime").value,
 
-company:val('company'),
+insurer:
+$("insurer").value,
 
-type:val('claimType'),
+callcenter:
+$("callcenter").value,
 
-date:val('reportDate'),
+reporter:
+$("reporter").value,
 
-events:events,
+phone:
+$("phone").value,
 
-damage:damage,
+insuranceType:
+$("insuranceType").value,
 
-sigInspector:
-$('sigInspector')
-.toDataURL('image/png'),
+claimType:
+$("claimType").value,
 
-sigDriver:
-$('sigDriver')
-.toDataURL('image/png'),
+insuredPlate:
+$("insuredPlate").value,
 
-files:[
-...$('photos').files
-].map(x=>x.name)
+insuredProvince:
+$("insuredProvince").value,
+
+insuredBrand:
+$("insuredBrand").value,
+
+insuredModel:
+$("insuredModel").value,
+
+insuredRef:
+$("insuredRef").value,
+
+thirdPlate:
+$("thirdPlate").value,
+
+thirdProvince:
+$("thirdProvince").value,
+
+thirdBrand:
+$("thirdBrand").value,
+
+thirdModel:
+$("thirdModel").value,
+
+thirdDriver:
+$("thirdDriver").value,
+
+thirdPhone:
+$("thirdPhone").value,
+
+eventDate:
+$("eventDate").value,
+
+eventTime:
+$("eventTime").value,
+
+eventPlace:
+$("eventPlace").value,
+
+eventDetail:
+$("eventDetail").value,
+
+insuredDamage:
+arr("i"),
+
+thirdDamage:
+arr("t"),
+
+insuredExcess:
+$("insuredExcess").value || 0,
+
+thirdExcess:
+$("thirdExcess").value || 0,
+
+damageNote:
+$("damageNote").value,
+
+signDate:
+$("signDate").value,
+
+signNote:
+$("signNote").value,
+
+sig1:
+$("sig1").toDataURL("image/png"),
+
+sig2:
+$("sig2").toDataURL("image/png"),
+
+files:
+[...$("files").files]
+.map(x=>x.name),
+
+status:"Pending"
 
 };
 
@@ -1629,137 +1522,129 @@ files:[
 
 
 
-/* =====================================================
-REVIEW
-===================================================== */
+function review(){
 
-function buildReview(){
-
-const c=collect();
+let c = data();
 
 
-$('review').innerHTML=`
+$("review").innerHTML = `
 
 <div>
 
-<b>
-เลขรับแจ้ง
-</b>
+<b>เลขที่แจ้ง</b>
 
-${c.id}
+${esc(c.id)}
 
 </div>
 
 
 <div>
 
-<b>
-เลขกรมธรรม์
-</b>
+<b>กรมธรรม์</b>
 
-${c.policy}
+${esc(c.policy) || "-"}
 
 </div>
 
 
 <div>
 
-<b>
-ผู้แจ้ง
-</b>
+<b>บริษัทประกัน</b>
 
-${c.reporter}
+${esc(c.insurer) || "-"}
 
 </div>
 
 
 <div>
 
-<b>
-โทรศัพท์
-</b>
+<b>ผู้แจ้ง</b>
 
-${c.phone}
+${esc(c.reporter) || "-"}
 
 </div>
 
 
 <div>
 
-<b>
-บริษัทประกัน
-</b>
+<b>รถประกัน</b>
 
-${c.company}
+${esc(c.insuredPlate) || "-"}
 
 </div>
 
 
 <div>
 
-<b>
-ประเภท
-</b>
+<b>รถคู่กรณี</b>
 
-${c.type}
+${esc(c.thirdPlate) || "-"}
+
+</div>
+
+
+<div>
+
+<b>วันเวลาเกิดเหตุ</b>
+
+${esc(c.eventDate)}
+${esc(c.eventTime)}
+
+</div>
+
+
+<div>
+
+<b>สถานที่</b>
+
+${esc(c.eventPlace) || "-"}
 
 </div>
 
 
 <div class="full">
 
-<b>
-เหตุการณ์
-</b>
+<b>ลักษณะเหตุการณ์</b>
 
-${events.map(
-(e,i)=>
-`
-ครั้งที่ ${i+1} :
-
-${e.date||'-'}
-
-${e.time||''}
-
-|
-
-${e.place||'-'}
-
-|
-
-${e.detail||'-'}
-
-|
-
-ค่าเสียหายส่วนแรก
-
-${e.first||0}
-
-บาท
-
-<br>
-`
-).join('')}
+${esc(c.eventDetail) || "-"}
 
 </div>
 
 
-<div class="full">
+<div>
 
 <b>
-รายการความเสียหาย
+ความเสียหายรถประกัน
 </b>
 
-${damage.map(
-(a,i)=>
-`
-เหตุการณ์ ${i+1} :
+${
+c.insuredDamage.length
+?
+c.insuredDamage
+.map(esc)
+.join("<br>")
+:
+"-"
+}
 
-${a.filter(Boolean).join(', ')||'-'}
+</div>
 
-<br>
-`
-).join('')}
+
+<div>
+
+<b>
+ความเสียหายรถคู่กรณี
+</b>
+
+${
+c.thirdDamage.length
+?
+c.thirdDamage
+.map(esc)
+.join("<br>")
+:
+"-"
+}
 
 </div>
 
@@ -1770,8 +1655,13 @@ ${a.filter(Boolean).join(', ')||'-'}
 หลักฐาน
 </b>
 
-${$('photos').files.length}
-ไฟล์
+${
+c.files.length
+?
+c.files.map(esc).join("<br>")
+:
+"ไม่มี"
+}
 
 </div>
 
@@ -1793,103 +1683,33 @@ ${$('photos').files.length}
 
 
 
-/* =====================================================
-SAVE DRAFT
-===================================================== */
-
 function saveDraft(){
 
-const c=collect();
+let c = data();
 
-c.status='Draft';
+c.status = "Draft";
 
-c.savedAt=
-new Date()
-.toLocaleString('th-TH');
-
-
-const idx =
-claims.findIndex(
-x=>x.id===c.id
-);
-
-
-if(idx>=0){
-
-claims[idx]=c;
-
-}
-else{
-
-claims.unshift(c);
-
-}
-
-
-localStorage.setItem(
-'claim_online_v2',
-JSON.stringify(claims)
-);
-
-
-renderClaims();
-
+upsert(c);
 
 alert(
-'บันทึกแบบร่างเรียบร้อยแล้ว\n\nเลขที่: '
-+
+"บันทึกแบบร่างแล้ว\n" +
 c.id
 );
 
 }
 
 
-
-/* =====================================================
-SUBMIT
-===================================================== */
 
 function submitClaim(){
 
-const c=collect();
+let c = data();
 
-c.status='Pending';
+c.status = "Pending";
 
-c.created=
-new Date()
-.toLocaleString('th-TH');
-
-
-const idx =
-claims.findIndex(
-x=>x.id===c.id
-);
-
-
-if(idx>=0){
-
-claims[idx]=c;
-
-}
-else{
-
-claims.unshift(c);
-
-}
-
-
-localStorage.setItem(
-'claim_online_v2',
-JSON.stringify(claims)
-);
-
-
-renderClaims();
-
+upsert(c);
 
 alert(
-'บันทึก Claim สำเร็จ\n\nเลขที่: '
-+
+"บันทึก Claim สำเร็จ\n" +
 c.id
 );
 
@@ -1897,58 +1717,93 @@ c.id
 
 
 
-/* =====================================================
-TRACKING
-===================================================== */
+function upsert(c){
+
+let index =
+claims.findIndex(
+x => x.id === c.id
+);
+
+
+if(index >= 0){
+
+claims[index] = c;
+
+}else{
+
+claims.unshift(c);
+
+}
+
+
+localStorage.setItem(
+"infinity_claims",
+JSON.stringify(claims)
+);
+
+
+renderClaims();
+
+}
+
+
 
 function renderClaims(){
 
-const q =
+let q =
 (
-$('search').value ||
-''
-).toLowerCase();
+$("search").value || ""
+)
+.toLowerCase();
 
 
-const rows =
-claims.filter(c=>
+let result =
+claims.filter(
+c =>
 (
-c.id+
-c.policy+
-c.reporter
+c.id +
+" " +
+c.reporter +
+" " +
+c.insuredPlate
 )
 .toLowerCase()
 .includes(q)
 );
 
 
-$('claimTable').innerHTML =
+$("count").value =
+claims.length +
+" รายการ";
 
-rows.map(c=>`
+
+$("claimTable").innerHTML =
+result.map(
+c => `
 
 <tr>
 
 <td>
 
 <b>
-${c.id}
+${esc(c.id)}
 </b>
 
 </td>
 
 
 <td>
-${c.reporter}
+${esc(c.reporter) || "-"}
 </td>
 
 
 <td>
-${c.policy}
+${esc(c.insuredPlate) || "-"}
 </td>
 
 
 <td>
-${c.date}
+${esc(c.eventDate || c.reportDate) || "-"}
 </td>
 
 
@@ -1956,12 +1811,14 @@ ${c.date}
 
 <span
 class="status ${
-c.status==='Draft'
-?'draft'
-:'pending'
+c.status === "Draft"
+?
+"draft"
+:
+"pending"
 }">
 
-${c.status}
+${esc(c.status)}
 
 </span>
 
@@ -1972,11 +1829,9 @@ ${c.status}
 
 <button
 class="btn secondary"
-onclick="
-generateSavedPDF('${c.id}')
-">
+onclick="saved('${encodeURIComponent(c.id)}')">
 
-🖨️ ปริ้น / PDF
+🖨️ PDF
 
 </button>
 
@@ -1984,157 +1839,57 @@ generateSavedPDF('${c.id}')
 
 </tr>
 
-`).join('');
-
-
-$('stat').value =
-claims.length+
-' Claim';
+`
+).join("");
 
 }
 
 
-renderClaims();
 
+function saved(encoded){
 
-
-/* =====================================================
-PRINT
-===================================================== */
-
-function printCurrent(){
-
-const c=collect();
-
-pdfWindow(c);
-
-}
-
-
-function generatePDF(){
-
-const c=collect();
-
-pdfWindow(c);
-
-}
-
-
-function generateSavedPDF(id){
-
-const c =
+let c =
 claims.find(
-x=>x.id===id
+x =>
+x.id ===
+decodeURIComponent(encoded)
 );
+
 
 if(c)
-pdfWindow(c);
+print(c);
 
 }
 
 
 
-/* =====================================================
-PDF / PRINT DOCUMENT
-===================================================== */
+function printClaim(){
 
-function pdfWindow(c){
+print(data());
 
-const w =
+}
+
+
+
+function print(c){
+
+let w =
 window.open(
-'',
-'_blank'
+"",
+"_blank"
 );
-
-
-const ev =
-c.events.map(
-(e,i)=>`
-
-<h3>
-เหตุการณ์ที่ ${i+1}
-</h3>
-
-
-<p>
-
-<b>
-วันที่:
-</b>
-
-${e.date||'-'}
-
-&nbsp;&nbsp;
-
-<b>
-เวลา:
-</b>
-
-${e.time||'-'}
-
-&nbsp;&nbsp;
-
-<b>
-สถานที่:
-</b>
-
-${e.place||'-'}
-
-</p>
-
-
-<p>
-
-<b>
-ลักษณะ:
-</b>
-
-${e.detail||'-'}
-
-</p>
-
-
-<ol>
-
-${
-(c.damage[i]||[])
-.map(
-x=>`
-<li>
-${x||'-'}
-</li>
-`
-)
-.join('')
-}
-
-</ol>
-
-
-<p>
-
-<b>
-เรียกเก็บความเสียหายส่วนแรก:
-</b>
-
-${e.first||0}
-
-บาท
-
-</p>
-
-`
-).join('');
 
 
 w.document.write(`
 
-<html>
+<html lang="th">
 
 <head>
 
+<meta charset="UTF-8">
+
 <title>
-${c.id}
+${esc(c.id)}
 </title>
 
 
@@ -2143,36 +1898,29 @@ ${c.id}
 body{
 
 font-family:
-Arial,
-"Tahoma",
-sans-serif;
+Tahoma,
+Arial;
 
-padding:35px;
+padding:28px;
 
-line-height:1.6;
+line-height:1.55;
 
-color:#18243a;
+color:#172338;
 
 }
 
-
-.company{
+.head{
 
 text-align:center;
 
 border-bottom:
 2px solid #0b4ca8;
 
-padding-bottom:
-12px;
-
-margin-bottom:
-20px;
+padding-bottom:12px;
 
 }
 
-
-.company h2{
+.head h2{
 
 margin:0;
 
@@ -2180,19 +1928,17 @@ color:#0b4ca8;
 
 }
 
-
 .title{
 
 text-align:center;
 
-font-size:24px;
+font-size:22px;
 
 font-weight:bold;
 
-margin:20px;
+margin:18px;
 
 }
-
 
 table{
 
@@ -2203,22 +1949,49 @@ collapse;
 
 }
 
-
 td{
 
 border:
-1px solid #ddd;
+1px solid #ccc;
 
-padding:8px;
+padding:7px;
 
 }
 
+.box{
+
+border:
+1px solid #ccc;
+
+padding:10px;
+
+margin:10px 0;
+
+}
+
+.cols{
+
+display:flex;
+
+gap:30px;
+
+margin-top:35px;
+
+}
+
+.col{
+
+flex:1;
+
+text-align:center;
+
+}
 
 .sig{
 
-width:280px;
+width:100%;
 
-height:120px;
+height:125px;
 
 object-fit:contain;
 
@@ -2227,35 +2000,13 @@ border:
 
 }
 
-
-.signs{
-
-display:flex;
-
-gap:40px;
-
-margin-top:40px;
-
-}
-
-
-.signs>div{
-
-flex:1;
-
-text-align:center;
-
-}
-
-
 .print{
 
 text-align:center;
 
-margin-top:30px;
+margin:25px;
 
 }
-
 
 @media print{
 
@@ -2275,7 +2026,7 @@ display:none;
 <body>
 
 
-<div class="company">
+<div class="head">
 
 <h2>
 INFINITY SURVEY LIMITED PARTNERSHIP
@@ -2304,11 +2055,11 @@ INFINITY SURVEY LIMITED PARTNERSHIP
 <tr>
 
 <td>
-เลขรับแจ้ง
+เลขที่แจ้ง
 </td>
 
 <td>
-${c.id}
+${esc(c.id)}
 </td>
 
 <td>
@@ -2316,7 +2067,28 @@ ${c.id}
 </td>
 
 <td>
-${c.policy}
+${esc(c.policy) || "-"}
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+บริษัทประกัน
+</td>
+
+<td>
+${esc(c.insurer) || "-"}
+</td>
+
+<td>
+Call Center
+</td>
+
+<td>
+${esc(c.callcenter) || "-"}
 </td>
 
 </tr>
@@ -2329,94 +2101,237 @@ ${c.policy}
 </td>
 
 <td>
-${c.reporter}
+${esc(c.reporter) || "-"}
 </td>
 
 <td>
-บริษัทประกัน
+โทร
 </td>
 
 <td>
-${c.company}
+${esc(c.phone) || "-"}
 </td>
 
 </tr>
-
-
-<tr>
-
-<td>
-โทรศัพท์
-</td>
-
-<td>
-${c.phone}
-</td>
-
-<td>
-ประเภท
-</td>
-
-<td>
-${c.type}
-</td>
-
-</tr>
-
 
 </table>
 
 
-${ev}
+<div class="box">
 
+<b>
+รถประกัน
+</b>
 
-<h2>
-หลักฐานประกอบ
-</h2>
+<br>
 
+ทะเบียน
+${esc(c.insuredPlate) || "-"}
 
-<p>
+|
 
-${
-c.files.length
-?
-c.files.join(', ')
-:
-'ไม่มีไฟล์แนบ'
-}
+${esc(c.insuredBrand) || "-"}
 
-</p>
+${esc(c.insuredModel) || "-"}
 
+|
 
-<div class="signs">
-
-
-<div>
-
-<p>
-ผู้ตรวจสอบ
-</p>
-
-<img
-class="sig"
-src="${c.sigInspector}"
->
-
+จังหวัด
+${esc(c.insuredProvince) || "-"}
 
 </div>
 
 
-<div>
+<div class="box">
+
+<b>
+รถคู่กรณี
+</b>
+
+<br>
+
+ทะเบียน
+${esc(c.thirdPlate) || "-"}
+
+|
+
+${esc(c.thirdBrand) || "-"}
+
+${esc(c.thirdModel) || "-"}
+
+|
+
+จังหวัด
+${esc(c.thirdProvince) || "-"}
+
+<br>
+
+ผู้ขับขี่
+${esc(c.thirdDriver) || "-"}
+
+โทร
+${esc(c.thirdPhone) || "-"}
+
+</div>
+
+
+<div class="box">
+
+<b>
+เหตุการณ์
+</b>
+
+<br>
+
+${esc(c.eventDate)}
+
+${esc(c.eventTime)}
+
+|
+
+${esc(c.eventPlace) || "-"}
+
+<br>
+
+${esc(c.eventDetail) || "-"}
+
+</div>
+
+
+<h3>
+ความเสียหายรถประกัน
+</h3>
+
+${
+c.insuredDamage.length
+?
+"<ol>" +
+c.insuredDamage
+.map(
+x =>
+"<li>" +
+esc(x) +
+"</li>"
+)
+.join("") +
+"</ol>"
+:
+"-"
+}
+
 
 <p>
-ผู้ขับขี่รถประกัน / ผู้รับหลักฐาน
+
+ส่วนแรก
+${esc(c.insuredExcess)}
+บาท
+
 </p>
+
+
+<h3>
+ความเสียหายรถคู่กรณี
+</h3>
+
+
+${
+c.thirdDamage.length
+?
+"<ol>" +
+c.thirdDamage
+.map(
+x =>
+"<li>" +
+esc(x) +
+"</li>"
+)
+.join("") +
+"</ol>"
+:
+"-"
+}
+
+
+<p>
+
+ส่วนแรก
+${esc(c.thirdExcess)}
+บาท
+
+</p>
+
+
+<div class="box">
+
+<b>
+หมายเหตุ
+</b>
+
+<br>
+
+${esc(c.damageNote) || "-"}
+
+</div>
+
+
+<div class="box">
+
+<b>
+ไฟล์หลักฐาน
+</b>
+
+<br>
+
+${
+c.files.length
+?
+c.files.map(esc).join("<br>")
+:
+"ไม่มีไฟล์แนบ"
+}
+
+</div>
+
+
+<div class="cols">
+
+
+<div class="col">
+
+<b>
+ผู้ตรวจสอบ
+</b>
+
+<br>
 
 <img
 class="sig"
-src="${c.sigDriver}"
->
+src="${c.sig1}">
 
+<br>
+
+วันที่
+${esc(c.signDate)}
+
+</div>
+
+
+<div class="col">
+
+<b>
+ผู้รับหลักฐาน / ผู้ขับขี่
+</b>
+
+<br>
+
+<img
+class="sig"
+src="${c.sig2}">
+
+<br>
+
+วันที่
+${esc(c.signDate)}
 
 </div>
 
@@ -2446,6 +2361,235 @@ onclick="window.print()">
 w.document.close();
 
 }
+
+
+
+function sig(id){
+
+let canvas =
+$(id);
+
+let ctx =
+canvas.getContext("2d");
+
+let drawing = false;
+
+let last;
+
+
+function resize(){
+
+let rect =
+canvas.getBoundingClientRect();
+
+let ratio =
+window.devicePixelRatio || 1;
+
+canvas.width =
+rect.width * ratio;
+
+canvas.height =
+rect.height * ratio;
+
+ctx.setTransform(
+ratio,
+0,
+0,
+ratio,
+0,
+0
+);
+
+ctx.lineWidth = 2.5;
+
+ctx.lineCap =
+"round";
+
+ctx.strokeStyle =
+"#123d72";
+
+}
+
+
+resize();
+
+
+function position(e){
+
+let rect =
+canvas.getBoundingClientRect();
+
+let point =
+e.touches
+?
+e.touches[0]
+:
+e;
+
+return {
+
+x:
+point.clientX -
+rect.left,
+
+y:
+point.clientY -
+rect.top
+
+};
+
+}
+
+
+function start(e){
+
+drawing = true;
+
+last =
+position(e);
+
+e.preventDefault();
+
+}
+
+
+function move(e){
+
+if(!drawing)
+return;
+
+let p =
+position(e);
+
+ctx.beginPath();
+
+ctx.moveTo(
+last.x,
+last.y
+);
+
+ctx.lineTo(
+p.x,
+p.y
+);
+
+ctx.stroke();
+
+last = p;
+
+e.preventDefault();
+
+}
+
+
+canvas.onmousedown =
+start;
+
+canvas.onmousemove =
+move;
+
+
+window.addEventListener(
+"mouseup",
+() =>
+drawing = false
+);
+
+
+canvas.ontouchstart =
+start;
+
+canvas.ontouchmove =
+move;
+
+canvas.ontouchend =
+() =>
+drawing = false;
+
+}
+
+
+
+function clearSig(id){
+
+let canvas =
+$(id);
+
+let ctx =
+canvas.getContext("2d");
+
+ctx.clearRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
+
+}
+
+
+
+$("files").onchange =
+() => {
+
+$("preview").innerHTML = "";
+
+
+[
+...
+$("files").files
+]
+.forEach(
+file => {
+
+if(
+file.type.startsWith(
+"image/"
+)
+){
+
+let img =
+document.createElement(
+"img"
+);
+
+img.className =
+"thumb";
+
+img.src =
+URL.createObjectURL(
+file
+);
+
+$("preview")
+.appendChild(img);
+
+}else{
+
+let div =
+document.createElement(
+"div"
+);
+
+div.className =
+"file-item";
+
+div.textContent =
+"📄 " +
+file.name;
+
+$("preview")
+.appendChild(div);
+
+}
+
+});
+
+};
+
+
+
+init();
 
 </script>
 
