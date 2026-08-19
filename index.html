@@ -1,0 +1,2453 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Claim Online | Infinity Survey</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+:root{
+  --blue:#1769e0;
+  --blue2:#0b4ca8;
+  --bg:#f3f6fb;
+  --text:#18243a;
+  --muted:#68758a;
+  --line:#dce4ef;
+  --green:#16a34a;
+  --yellow:#f59e0b;
+  --red:#dc2626;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  font-family:"Segoe UI",Tahoma,Arial,sans-serif;
+  color:var(--text);
+}
+
+/* ================= HEADER ================= */
+
+header{
+  background:linear-gradient(135deg,#0a3f91,#2186f3);
+  color:#fff;
+  padding:18px 5%;
+  position:sticky;
+  top:0;
+  z-index:10;
+  box-shadow:0 4px 18px #12345a30;
+}
+
+.head{
+  max-width:1150px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:900;
+}
+
+.sub{
+  font-size:12px;
+  opacity:.9;
+  margin-top:3px;
+}
+
+.container{
+  max-width:1150px;
+  margin:25px auto;
+  padding:0 16px;
+}
+
+/* ================= STEPS ================= */
+
+.steps{
+  display:flex;
+  gap:7px;
+  overflow:auto;
+  margin-bottom:18px;
+}
+
+.step{
+  min-width:120px;
+  background:#fff;
+  border:1px solid var(--line);
+  padding:10px 13px;
+  border-radius:12px;
+  text-align:center;
+  font-size:13px;
+  font-weight:800;
+  color:#738096;
+}
+
+.step.active{
+  background:var(--blue);
+  color:#fff;
+  border-color:var(--blue);
+}
+
+.step.done{
+  background:#e8f7ee;
+  color:var(--green);
+  border-color:#b9e3c7;
+}
+
+/* ================= CARD ================= */
+
+.card{
+  background:#fff;
+  border-radius:18px;
+  padding:24px;
+  margin-bottom:18px;
+  box-shadow:0 6px 24px #18375d10;
+}
+
+h1{
+  font-size:26px;
+  margin:0 0 6px;
+}
+
+h2{
+  font-size:19px;
+  margin:0 0 16px;
+}
+
+.muted{
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* ================= FORM ================= */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:15px;
+}
+
+.full{
+  grid-column:1/-1;
+}
+
+label{
+  display:block;
+  font-size:13px;
+  font-weight:800;
+  margin:0 0 7px;
+}
+
+input,
+select,
+textarea{
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:11px;
+  padding:12px;
+  font-size:15px;
+  outline:none;
+  background:#fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  border-color:var(--blue);
+  box-shadow:0 0 0 3px #1769e014;
+}
+
+textarea{
+  min-height:105px;
+  resize:vertical;
+}
+
+/* ================= BUTTON ================= */
+
+.btn{
+  border:0;
+  border-radius:11px;
+  padding:12px 18px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.primary{
+  background:var(--blue);
+  color:#fff;
+}
+
+.secondary{
+  background:#eaf1fb;
+  color:#164e91;
+}
+
+.danger{
+  background:#fee2e2;
+  color:#991b1b;
+}
+
+.success{
+  background:var(--green);
+  color:#fff;
+}
+
+.actions{
+  display:flex;
+  gap:10px;
+  justify-content:flex-end;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+/* ================= EVENT ================= */
+
+.event{
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:17px;
+  margin-bottom:15px;
+  background:#fbfdff;
+}
+
+.event-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:13px;
+}
+
+.damage-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+}
+
+/* ================= SIGNATURE ================= */
+
+.signature{
+  width:100%;
+  height:170px;
+  border:2px dashed #9db4d3;
+  border-radius:12px;
+  background:#fcfdff;
+  touch-action:none;
+}
+
+/* ================= FILE ================= */
+
+.filebox{
+  border:2px dashed #b6c7dd;
+  border-radius:14px;
+  padding:22px;
+  text-align:center;
+}
+
+.preview{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:12px;
+}
+
+.thumb{
+  width:105px;
+  height:105px;
+  border-radius:10px;
+  object-fit:cover;
+  border:1px solid var(--line);
+}
+
+/* ================= REVIEW ================= */
+
+.review{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.review div{
+  padding:12px;
+  background:#f7f9fc;
+  border-radius:10px;
+}
+
+.review b{
+  display:block;
+  font-size:12px;
+  color:var(--muted);
+  margin-bottom:4px;
+}
+
+/* ================= TABLE ================= */
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+th,
+td{
+  padding:12px;
+  text-align:left;
+  border-bottom:1px solid #edf0f5;
+  font-size:13px;
+}
+
+th{
+  background:#f7f9fc;
+}
+
+.status{
+  display:inline-block;
+  padding:5px 10px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:900;
+}
+
+.pending{
+  background:#fff4cf;
+  color:#946200;
+}
+
+.draft{
+  background:#eaf1fb;
+  color:#164e91;
+}
+
+.notice{
+  padding:12px 14px;
+  background:#eff6ff;
+  border-left:4px solid var(--blue);
+  border-radius:8px;
+  font-size:13px;
+  margin-bottom:15px;
+}
+
+.hidden{
+  display:none!important;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+  .grid,
+  .review{
+    grid-template-columns:1fr;
+  }
+
+  .full{
+    grid-column:auto;
+  }
+
+  .damage-grid{
+    grid-template-columns:1fr;
+  }
+
+  .head{
+    align-items:flex-start;
+  }
+
+  .sub{
+    display:block;
+  }
+
+  .card{
+    padding:18px;
+  }
+
+  h1{
+    font-size:22px;
+  }
+
+  .step{
+    min-width:105px;
+  }
+
+}
+</style>
+</head>
+
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="head">
+
+<div>
+
+<div class="logo">
+INFINITY SURVEY LIMITED PARTNERSHIP
+</div>
+
+<div class="sub">
+ห้างหุ้นส่วนจำกัด อินฟินิตี้ เซอร์เวย์ |
+ระบบแจ้งเคลมออนไลน์
+</div>
+
+</div>
+
+<div style="display:flex;gap:8px">
+
+<button
+class="btn secondary"
+style="background:#fff;color:#0b4ca8"
+onclick="saveDraft()">
+💾 บันทึก
+</button>
+
+<button
+class="btn secondary"
+style="background:#fff;color:#0b4ca8"
+onclick="printCurrent()">
+🖨️ ปริ้น
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+
+<div class="container">
+
+
+<!-- ================= STEPS ================= -->
+
+<div class="steps">
+
+<div class="step active">
+① ข้อมูลเคลม
+</div>
+
+<div class="step">
+② เหตุการณ์
+</div>
+
+<div class="step">
+③ ความเสียหาย
+</div>
+
+<div class="step">
+④ หลักฐาน
+</div>
+
+<div class="step">
+⑤ เซ็นออนไลน์
+</div>
+
+<div class="step">
+⑥ ตรวจสอบ
+</div>
+
+</div>
+
+
+<!-- =====================================================
+STEP 1
+===================================================== -->
+
+<section id="s1" class="card">
+
+<h1>
+📄 ข้อมูลการแจ้งเคลม
+</h1>
+
+<p class="muted">
+กรอกข้อมูลหลักของเอกสารแจ้งเคลมเพิ่มเติม
+</p>
+
+
+<div class="grid">
+
+
+<div>
+
+<label>
+เลขรับแจ้ง *
+</label>
+
+<input
+id="claimNo"
+placeholder="เช่น CLM-2026-0001">
+
+</div>
+
+
+<div>
+
+<label>
+เลขกรมธรรม์ *
+</label>
+
+<input
+id="policyNo"
+placeholder="เลขกรมธรรม์">
+
+</div>
+
+
+<div>
+
+<label>
+ชื่อผู้แจ้ง *
+</label>
+
+<input
+id="reporter"
+placeholder="ชื่อ-นามสกุล">
+
+</div>
+
+
+<div>
+
+<label>
+เบอร์โทรศัพท์
+</label>
+
+<input
+id="phone"
+placeholder="08x-xxx-xxxx">
+
+</div>
+
+
+<div>
+
+<label>
+บริษัทประกัน
+</label>
+
+<input
+id="company"
+placeholder="ชื่อบริษัท">
+
+</div>
+
+
+<div>
+
+<label>
+ประเภทเคลม
+</label>
+
+<select id="claimType">
+
+<option>
+อุบัติเหตุรถยนต์
+</option>
+
+<option>
+ทรัพย์สินเสียหาย
+</option>
+
+<option>
+อื่น ๆ
+</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label>
+วันที่แจ้ง
+</label>
+
+<input
+id="reportDate"
+type="date">
+
+</div>
+
+
+<div>
+
+<label>
+สถานะ
+</label>
+
+<input
+value="รอตรวจสอบ"
+disabled>
+
+</div>
+
+
+</div>
+
+
+<div class="actions">
+
+<button
+class="btn primary"
+onclick="next(1)">
+ถัดไป →
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+STEP 2
+===================================================== -->
+
+<section
+id="s2"
+class="card hidden">
+
+<h1>
+🚗 ข้อมูลเหตุการณ์
+</h1>
+
+<p class="muted">
+กรอกข้อมูลตามเอกสารแจ้งเคลมเพิ่มเติม
+</p>
+
+<div id="events"></div>
+
+
+<button
+class="btn secondary"
+onclick="addEvent()">
+
+＋ เพิ่มเหตุการณ์
+
+</button>
+
+
+<div class="actions">
+
+<button
+class="btn secondary"
+onclick="next(0)">
+← ย้อนกลับ
+</button>
+
+<button
+class="btn primary"
+onclick="next(2)">
+ถัดไป →
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+STEP 3
+===================================================== -->
+
+<section
+id="s3"
+class="card hidden">
+
+<h1>
+💥 รายการความเสียหาย
+</h1>
+
+<p class="muted">
+รองรับรายการความเสียหาย 1–9 รายการต่อเหตุการณ์
+</p>
+
+<div id="damageWrap"></div>
+
+
+<div class="actions">
+
+<button
+class="btn secondary"
+onclick="next(1)">
+← ย้อนกลับ
+</button>
+
+<button
+class="btn primary"
+onclick="next(3)">
+ถัดไป →
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+STEP 4
+===================================================== -->
+
+<section
+id="s4"
+class="card hidden">
+
+<h1>
+📷 หลักฐานความเสียหาย
+</h1>
+
+<div class="notice">
+
+สามารถเลือกไฟล์จากมือถือ
+หรือเปิดกล้องเพื่อถ่ายภาพหลักฐานได้
+
+</div>
+
+
+<div class="filebox">
+
+<input
+id="photos"
+type="file"
+accept="image/*,.pdf"
+multiple
+capture="environment">
+
+<p class="muted">
+
+📷 รูปความเสียหาย /
+📎 PDF / เอกสารเพิ่มเติม
+
+</p>
+
+</div>
+
+
+<div
+class="preview"
+id="preview">
+</div>
+
+
+<div class="actions">
+
+<button
+class="btn secondary"
+onclick="next(2)">
+← ย้อนกลับ
+</button>
+
+<button
+class="btn primary"
+onclick="next(4)">
+ถัดไป →
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+STEP 5
+===================================================== -->
+
+<section
+id="s5"
+class="card hidden">
+
+<h1>
+✍️ เซ็นออนไลน์
+</h1>
+
+<p class="muted">
+เซ็นด้วยนิ้วบนมือถือ หรือใช้เมาส์บนคอมพิวเตอร์
+</p>
+
+
+<div class="grid">
+
+
+<div>
+
+<h2>
+ลายเซ็นผู้ตรวจสอบ
+</h2>
+
+<canvas
+class="signature"
+id="sigInspector">
+</canvas>
+
+<button
+class="btn secondary"
+onclick="clearSig('sigInspector')">
+
+🧹 ล้าง
+
+</button>
+
+</div>
+
+
+
+<div>
+
+<h2>
+ลายเซ็นผู้ขับขี่รถประกัน / ผู้รับหลักฐาน
+</h2>
+
+<canvas
+class="signature"
+id="sigDriver">
+</canvas>
+
+<button
+class="btn secondary"
+onclick="clearSig('sigDriver')">
+
+🧹 ล้าง
+
+</button>
+
+</div>
+
+
+</div>
+
+
+<div class="actions">
+
+<button
+class="btn secondary"
+onclick="next(3)">
+← ย้อนกลับ
+</button>
+
+<button
+class="btn primary"
+onclick="next(5)">
+ตรวจสอบข้อมูล →
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+STEP 6
+===================================================== -->
+
+<section
+id="s6"
+class="card hidden">
+
+<h1>
+🔎 ตรวจสอบก่อนส่ง
+</h1>
+
+<p class="muted">
+ตรวจสอบข้อมูลทั้งหมดก่อนสร้างเอกสาร PDF
+</p>
+
+
+<div
+id="review"
+class="review">
+</div>
+
+
+<div class="actions">
+
+
+<button
+class="btn secondary"
+onclick="next(4)">
+← แก้ไข
+</button>
+
+
+<button
+class="btn secondary"
+onclick="saveDraft()">
+💾 บันทึกแบบร่าง
+</button>
+
+
+<button
+class="btn success"
+onclick="submitClaim()">
+✅ บันทึก Claim
+</button>
+
+
+<button
+class="btn primary"
+onclick="generatePDF()">
+📄 Generate / ปริ้น PDF
+</button>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+TRACKING
+===================================================== -->
+
+<section
+id="tracking"
+class="card">
+
+<h2>
+📊 Claim Tracking
+</h2>
+
+
+<div class="grid">
+
+
+<div>
+
+<label>
+ค้นหา Claim
+</label>
+
+<input
+id="search"
+oninput="renderClaims()"
+placeholder="เลขเคลม / ชื่อ / กรมธรรม์">
+
+</div>
+
+
+<div>
+
+<label>
+จำนวน Claim
+</label>
+
+<input
+id="stat"
+disabled>
+
+</div>
+
+
+</div>
+
+
+<div
+style="overflow:auto;margin-top:15px">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>
+Claim No.
+</th>
+
+<th>
+ผู้แจ้ง
+</th>
+
+<th>
+กรมธรรม์
+</th>
+
+<th>
+วันที่
+</th>
+
+<th>
+สถานะ
+</th>
+
+<th>
+เอกสาร
+</th>
+
+</tr>
+
+</thead>
+
+
+<tbody
+id="claimTable">
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+</div>
+
+
+
+<script>
+
+/* =====================================================
+DATA
+===================================================== */
+
+const $ = id =>
+document.getElementById(id);
+
+
+let events = [
+
+{
+ id:1,
+ date:'',
+ time:'',
+ place:'',
+ detail:'',
+ first:''
+}
+
+];
+
+
+let damage = [[]];
+
+
+let claims =
+JSON.parse(
+localStorage.getItem(
+'claim_online_v2'
+) || '[]'
+);
+
+
+/* =====================================================
+DEFAULT CLAIM NUMBER
+===================================================== */
+
+$('reportDate').value =
+new Date()
+.toISOString()
+.slice(0,10);
+
+
+$('claimNo').value =
+'CLM-' +
+new Date().getFullYear() +
+'-' +
+String(Date.now()).slice(-6);
+
+
+
+/* =====================================================
+STEP NAVIGATION
+===================================================== */
+
+function next(n){
+
+document
+.querySelectorAll('[id^="s"]')
+.forEach(x =>
+x.classList.add('hidden')
+);
+
+$('s'+(n+1))
+.classList.remove('hidden');
+
+
+document
+.querySelectorAll('.step')
+.forEach((x,i)=>{
+
+x.classList.toggle(
+'active',
+i===n
+);
+
+x.classList.toggle(
+'done',
+i<n
+);
+
+});
+
+
+if(n===2)
+renderDamage();
+
+
+if(n===5)
+buildReview();
+
+
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+
+}
+
+
+
+/* =====================================================
+EVENT
+===================================================== */
+
+function addEvent(){
+
+events.push({
+
+id:events.length+1,
+date:'',
+time:'',
+place:'',
+detail:'',
+first:''
+
+});
+
+renderEvents();
+
+}
+
+
+function removeEvent(i){
+
+events.splice(i,1);
+
+damage.splice(i,1);
+
+renderEvents();
+
+renderDamage();
+
+}
+
+
+function renderEvents(){
+
+$('events').innerHTML =
+events.map((e,i)=>`
+
+<div class="event">
+
+<div class="event-head">
+
+<b>
+เหตุการณ์ที่ ${i+1}
+</b>
+
+${i ?
+`
+<button
+class="btn danger"
+onclick="removeEvent(${i})">
+ลบ
+</button>
+`
+:''}
+
+</div>
+
+
+<div class="grid">
+
+
+<div>
+
+<label>
+วันที่เกิดเหตุ
+</label>
+
+<input
+type="date"
+value="${e.date}"
+onchange="
+events[${i}].date=this.value
+">
+
+</div>
+
+
+<div>
+
+<label>
+เวลา
+</label>
+
+<input
+type="time"
+value="${e.time}"
+onchange="
+events[${i}].time=this.value
+">
+
+</div>
+
+
+<div>
+
+<label>
+สถานที่เกิดเหตุ
+</label>
+
+<input
+value="${e.place}"
+onchange="
+events[${i}].place=this.value
+">
+
+</div>
+
+
+<div class="full">
+
+<label>
+ลักษณะการเกิดอุบัติเหตุ
+</label>
+
+<textarea
+onchange="
+events[${i}].detail=this.value
+">${e.detail}</textarea>
+
+</div>
+
+
+</div>
+
+</div>
+
+`).join('');
+
+}
+
+
+renderEvents();
+
+
+
+/* =====================================================
+DAMAGE
+===================================================== */
+
+function renderDamage(){
+
+$('damageWrap').innerHTML =
+
+events.map((e,i)=>{
+
+if(!damage[i])
+damage[i]=[];
+
+while(
+damage[i].length<9
+)
+damage[i].push('');
+
+
+return `
+
+<div class="event">
+
+<div class="event-head">
+
+<b>
+เหตุการณ์ที่ ${i+1}
+</b>
+
+</div>
+
+
+<div class="damage-grid">
+
+${damage[i]
+.map((v,j)=>`
+
+<div>
+
+<label>
+${j+1}. ความเสียหาย
+</label>
+
+<input
+value="${v}"
+placeholder="รายละเอียด"
+onchange="
+damage[${i}][${j}]=this.value
+">
+
+</div>
+
+`).join('')}
+
+</div>
+
+
+<div
+style="margin-top:12px">
+
+<label>
+เรียกเก็บความเสียหายส่วนแรก (บาท)
+</label>
+
+<input
+type="number"
+min="0"
+value="${e.first||''}"
+onchange="
+events[${i}].first=this.value
+">
+
+</div>
+
+
+</div>
+
+`;
+
+}).join('');
+
+}
+
+
+renderDamage();
+
+
+
+/* =====================================================
+SIGNATURE
+===================================================== */
+
+function setupCanvas(id){
+
+const c = $(id);
+
+const ctx =
+c.getContext('2d');
+
+let drawing=false;
+
+let last={
+x:0,
+y:0
+};
+
+
+function resize(){
+
+const r =
+c.getBoundingClientRect();
+
+const ratio =
+Math.max(
+devicePixelRatio||1,
+1
+);
+
+c.width =
+r.width*ratio;
+
+c.height =
+r.height*ratio;
+
+ctx.scale(
+ratio,
+ratio
+);
+
+ctx.lineWidth=2.5;
+
+ctx.lineCap='round';
+
+ctx.strokeStyle='#123d72';
+
+}
+
+
+resize();
+
+
+function pos(e){
+
+const r =
+c.getBoundingClientRect();
+
+const p =
+e.touches
+?
+e.touches[0]
+:
+e;
+
+return {
+
+x:p.clientX-r.left,
+
+y:p.clientY-r.top
+
+};
+
+}
+
+
+function start(e){
+
+drawing=true;
+
+last=pos(e);
+
+e.preventDefault();
+
+}
+
+
+function move(e){
+
+if(!drawing)
+return;
+
+let p=pos(e);
+
+ctx.beginPath();
+
+ctx.moveTo(
+last.x,
+last.y
+);
+
+ctx.lineTo(
+p.x,
+p.y
+);
+
+ctx.stroke();
+
+last=p;
+
+e.preventDefault();
+
+}
+
+
+c.addEventListener(
+'mousedown',
+start
+);
+
+c.addEventListener(
+'mousemove',
+move
+);
+
+window.addEventListener(
+'mouseup',
+()=>drawing=false
+);
+
+
+c.addEventListener(
+'touchstart',
+start,
+{passive:false}
+);
+
+c.addEventListener(
+'touchmove',
+move,
+{passive:false}
+);
+
+c.addEventListener(
+'touchend',
+()=>drawing=false
+);
+
+}
+
+
+setupCanvas(
+'sigInspector'
+);
+
+setupCanvas(
+'sigDriver'
+);
+
+
+
+function clearSig(id){
+
+const c=$(id);
+
+const ctx=
+c.getContext('2d');
+
+ctx.clearRect(
+0,
+0,
+c.width,
+c.height
+);
+
+}
+
+
+
+/* =====================================================
+PHOTO
+===================================================== */
+
+$('photos')
+.addEventListener(
+'change',
+()=>{
+
+$('preview').innerHTML='';
+
+
+[
+...$('photos').files
+]
+.forEach(f=>{
+
+if(
+f.type.startsWith(
+'image/'
+)){
+
+const img =
+document.createElement(
+'img'
+);
+
+img.className='thumb';
+
+img.src =
+URL.createObjectURL(f);
+
+$('preview')
+.appendChild(img);
+
+}
+
+else{
+
+const d =
+document.createElement(
+'div'
+);
+
+d.className='thumb';
+
+d.style.display='grid';
+
+d.style.placeItems='center';
+
+d.textContent =
+'📄 '+f.name.slice(0,12);
+
+$('preview')
+.appendChild(d);
+
+}
+
+});
+
+}
+);
+
+
+
+/* =====================================================
+COLLECT
+===================================================== */
+
+function val(id){
+
+return $(id).value || '-';
+
+}
+
+
+function collect(){
+
+return {
+
+id:val('claimNo'),
+
+policy:val('policyNo'),
+
+reporter:val('reporter'),
+
+phone:val('phone'),
+
+company:val('company'),
+
+type:val('claimType'),
+
+date:val('reportDate'),
+
+events:events,
+
+damage:damage,
+
+sigInspector:
+$('sigInspector')
+.toDataURL('image/png'),
+
+sigDriver:
+$('sigDriver')
+.toDataURL('image/png'),
+
+files:[
+...$('photos').files
+].map(x=>x.name)
+
+};
+
+}
+
+
+
+/* =====================================================
+REVIEW
+===================================================== */
+
+function buildReview(){
+
+const c=collect();
+
+
+$('review').innerHTML=`
+
+<div>
+
+<b>
+เลขรับแจ้ง
+</b>
+
+${c.id}
+
+</div>
+
+
+<div>
+
+<b>
+เลขกรมธรรม์
+</b>
+
+${c.policy}
+
+</div>
+
+
+<div>
+
+<b>
+ผู้แจ้ง
+</b>
+
+${c.reporter}
+
+</div>
+
+
+<div>
+
+<b>
+โทรศัพท์
+</b>
+
+${c.phone}
+
+</div>
+
+
+<div>
+
+<b>
+บริษัทประกัน
+</b>
+
+${c.company}
+
+</div>
+
+
+<div>
+
+<b>
+ประเภท
+</b>
+
+${c.type}
+
+</div>
+
+
+<div class="full">
+
+<b>
+เหตุการณ์
+</b>
+
+${events.map(
+(e,i)=>
+`
+ครั้งที่ ${i+1} :
+
+${e.date||'-'}
+
+${e.time||''}
+
+|
+
+${e.place||'-'}
+
+|
+
+${e.detail||'-'}
+
+|
+
+ค่าเสียหายส่วนแรก
+
+${e.first||0}
+
+บาท
+
+<br>
+`
+).join('')}
+
+</div>
+
+
+<div class="full">
+
+<b>
+รายการความเสียหาย
+</b>
+
+${damage.map(
+(a,i)=>
+`
+เหตุการณ์ ${i+1} :
+
+${a.filter(Boolean).join(', ')||'-'}
+
+<br>
+`
+).join('')}
+
+</div>
+
+
+<div>
+
+<b>
+หลักฐาน
+</b>
+
+${$('photos').files.length}
+ไฟล์
+
+</div>
+
+
+<div>
+
+<b>
+ลายเซ็น
+</b>
+
+ผู้ตรวจสอบ +
+ผู้รับหลักฐาน
+
+</div>
+
+`;
+
+}
+
+
+
+/* =====================================================
+SAVE DRAFT
+===================================================== */
+
+function saveDraft(){
+
+const c=collect();
+
+c.status='Draft';
+
+c.savedAt=
+new Date()
+.toLocaleString('th-TH');
+
+
+const idx =
+claims.findIndex(
+x=>x.id===c.id
+);
+
+
+if(idx>=0){
+
+claims[idx]=c;
+
+}
+else{
+
+claims.unshift(c);
+
+}
+
+
+localStorage.setItem(
+'claim_online_v2',
+JSON.stringify(claims)
+);
+
+
+renderClaims();
+
+
+alert(
+'บันทึกแบบร่างเรียบร้อยแล้ว\n\nเลขที่: '
++
+c.id
+);
+
+}
+
+
+
+/* =====================================================
+SUBMIT
+===================================================== */
+
+function submitClaim(){
+
+const c=collect();
+
+c.status='Pending';
+
+c.created=
+new Date()
+.toLocaleString('th-TH');
+
+
+const idx =
+claims.findIndex(
+x=>x.id===c.id
+);
+
+
+if(idx>=0){
+
+claims[idx]=c;
+
+}
+else{
+
+claims.unshift(c);
+
+}
+
+
+localStorage.setItem(
+'claim_online_v2',
+JSON.stringify(claims)
+);
+
+
+renderClaims();
+
+
+alert(
+'บันทึก Claim สำเร็จ\n\nเลขที่: '
++
+c.id
+);
+
+}
+
+
+
+/* =====================================================
+TRACKING
+===================================================== */
+
+function renderClaims(){
+
+const q =
+(
+$('search').value ||
+''
+).toLowerCase();
+
+
+const rows =
+claims.filter(c=>
+(
+c.id+
+c.policy+
+c.reporter
+)
+.toLowerCase()
+.includes(q)
+);
+
+
+$('claimTable').innerHTML =
+
+rows.map(c=>`
+
+<tr>
+
+<td>
+
+<b>
+${c.id}
+</b>
+
+</td>
+
+
+<td>
+${c.reporter}
+</td>
+
+
+<td>
+${c.policy}
+</td>
+
+
+<td>
+${c.date}
+</td>
+
+
+<td>
+
+<span
+class="status ${
+c.status==='Draft'
+?'draft'
+:'pending'
+}">
+
+${c.status}
+
+</span>
+
+</td>
+
+
+<td>
+
+<button
+class="btn secondary"
+onclick="
+generateSavedPDF('${c.id}')
+">
+
+🖨️ ปริ้น / PDF
+
+</button>
+
+</td>
+
+</tr>
+
+`).join('');
+
+
+$('stat').value =
+claims.length+
+' Claim';
+
+}
+
+
+renderClaims();
+
+
+
+/* =====================================================
+PRINT
+===================================================== */
+
+function printCurrent(){
+
+const c=collect();
+
+pdfWindow(c);
+
+}
+
+
+function generatePDF(){
+
+const c=collect();
+
+pdfWindow(c);
+
+}
+
+
+function generateSavedPDF(id){
+
+const c =
+claims.find(
+x=>x.id===id
+);
+
+if(c)
+pdfWindow(c);
+
+}
+
+
+
+/* =====================================================
+PDF / PRINT DOCUMENT
+===================================================== */
+
+function pdfWindow(c){
+
+const w =
+window.open(
+'',
+'_blank'
+);
+
+
+const ev =
+c.events.map(
+(e,i)=>`
+
+<h3>
+เหตุการณ์ที่ ${i+1}
+</h3>
+
+
+<p>
+
+<b>
+วันที่:
+</b>
+
+${e.date||'-'}
+
+&nbsp;&nbsp;
+
+<b>
+เวลา:
+</b>
+
+${e.time||'-'}
+
+&nbsp;&nbsp;
+
+<b>
+สถานที่:
+</b>
+
+${e.place||'-'}
+
+</p>
+
+
+<p>
+
+<b>
+ลักษณะ:
+</b>
+
+${e.detail||'-'}
+
+</p>
+
+
+<ol>
+
+${
+(c.damage[i]||[])
+.map(
+x=>`
+<li>
+${x||'-'}
+</li>
+`
+)
+.join('')
+}
+
+</ol>
+
+
+<p>
+
+<b>
+เรียกเก็บความเสียหายส่วนแรก:
+</b>
+
+${e.first||0}
+
+บาท
+
+</p>
+
+`
+).join('');
+
+
+w.document.write(`
+
+<html>
+
+<head>
+
+<title>
+${c.id}
+</title>
+
+
+<style>
+
+body{
+
+font-family:
+Arial,
+"Tahoma",
+sans-serif;
+
+padding:35px;
+
+line-height:1.6;
+
+color:#18243a;
+
+}
+
+
+.company{
+
+text-align:center;
+
+border-bottom:
+2px solid #0b4ca8;
+
+padding-bottom:
+12px;
+
+margin-bottom:
+20px;
+
+}
+
+
+.company h2{
+
+margin:0;
+
+color:#0b4ca8;
+
+}
+
+
+.title{
+
+text-align:center;
+
+font-size:24px;
+
+font-weight:bold;
+
+margin:20px;
+
+}
+
+
+table{
+
+width:100%;
+
+border-collapse:
+collapse;
+
+}
+
+
+td{
+
+border:
+1px solid #ddd;
+
+padding:8px;
+
+}
+
+
+.sig{
+
+width:280px;
+
+height:120px;
+
+object-fit:contain;
+
+border:
+1px solid #ddd;
+
+}
+
+
+.signs{
+
+display:flex;
+
+gap:40px;
+
+margin-top:40px;
+
+}
+
+
+.signs>div{
+
+flex:1;
+
+text-align:center;
+
+}
+
+
+.print{
+
+text-align:center;
+
+margin-top:30px;
+
+}
+
+
+@media print{
+
+.print{
+
+display:none;
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="company">
+
+<h2>
+INFINITY SURVEY LIMITED PARTNERSHIP
+</h2>
+
+<div>
+ห้างหุ้นส่วนจำกัด อินฟินิตี้ เซอร์เวย์
+</div>
+
+<div>
+ระบบแจ้งเคลมออนไลน์
+</div>
+
+</div>
+
+
+<div class="title">
+
+เอกสารแจ้งเคลมเพิ่มเติม
+
+</div>
+
+
+<table>
+
+<tr>
+
+<td>
+เลขรับแจ้ง
+</td>
+
+<td>
+${c.id}
+</td>
+
+<td>
+เลขกรมธรรม์
+</td>
+
+<td>
+${c.policy}
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+ผู้แจ้ง
+</td>
+
+<td>
+${c.reporter}
+</td>
+
+<td>
+บริษัทประกัน
+</td>
+
+<td>
+${c.company}
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+โทรศัพท์
+</td>
+
+<td>
+${c.phone}
+</td>
+
+<td>
+ประเภท
+</td>
+
+<td>
+${c.type}
+</td>
+
+</tr>
+
+
+</table>
+
+
+${ev}
+
+
+<h2>
+หลักฐานประกอบ
+</h2>
+
+
+<p>
+
+${
+c.files.length
+?
+c.files.join(', ')
+:
+'ไม่มีไฟล์แนบ'
+}
+
+</p>
+
+
+<div class="signs">
+
+
+<div>
+
+<p>
+ผู้ตรวจสอบ
+</p>
+
+<img
+class="sig"
+src="${c.sigInspector}"
+>
+
+
+</div>
+
+
+<div>
+
+<p>
+ผู้ขับขี่รถประกัน / ผู้รับหลักฐาน
+</p>
+
+<img
+class="sig"
+src="${c.sigDriver}"
+>
+
+
+</div>
+
+
+</div>
+
+
+<div class="print">
+
+<button
+onclick="window.print()">
+
+🖨️ Print / Save as PDF
+
+</button>
+
+</div>
+
+
+</body>
+
+</html>
+
+`);
+
+
+w.document.close();
+
+}
+
+</script>
+
+</body>
+</html>
