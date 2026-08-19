@@ -4,182 +4,87 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Claim Online | Infinity Survey</title>
+<title>ระบบแจ้งเคลมออนไลน์</title>
 
 <style>
+
 *{
     box-sizing:border-box;
 }
 
 body{
     margin:0;
-    background:#f4f7fb;
-    font-family:Tahoma,"Segoe UI",Arial,sans-serif;
-    color:#172338;
+    font-family:"Tahoma","Arial",sans-serif;
+    background:#eef3f8;
+    color:#172033;
 }
 
-/* HEADER */
-header{
-    background:linear-gradient(135deg,#083f91,#2085ef);
+.header{
+    background:linear-gradient(135deg,#0756b8,#0b83e6);
     color:white;
-    padding:15px 18px;
-    position:sticky;
-    top:0;
-    z-index:20;
-    box-shadow:0 4px 18px #102f5b30;
+    padding:24px 20px;
+    text-align:center;
 }
 
-.head{
-    max-width:1180px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:12px;
+.header h1{
+    margin:0;
+    font-size:27px;
 }
 
-.brand{
-    font-size:19px;
-    font-weight:900;
-}
-
-.brand small{
-    display:block;
-    font-size:11px;
-    font-weight:500;
-    margin-top:3px;
+.header p{
+    margin:6px 0 0;
     opacity:.9;
 }
 
-.top{
-    display:flex;
-    gap:7px;
-}
-
-/* BUTTON */
-.btn{
-    border:0;
-    border-radius:10px;
-    padding:11px 15px;
-    font-weight:800;
-    cursor:pointer;
-}
-
-.white{
-    background:white;
-    color:#0b4ca8;
-}
-
-.primary{
-    background:#1267d9;
-    color:white;
-}
-
-.secondary{
-    background:#eaf1fb;
-    color:#124d91;
-}
-
-.success{
-    background:#16a34a;
-    color:white;
-}
-
-.danger{
-    background:#fee2e2;
-    color:#991b1b;
-}
-
-/* CONTAINER */
 .container{
-    max-width:1180px;
-    margin:20px auto;
-    padding:0 14px;
+    max-width:1000px;
+    margin:25px auto;
+    padding:0 15px;
 }
 
-/* STEPS */
-.steps{
-    display:flex;
-    gap:7px;
-    overflow:auto;
-    margin-bottom:16px;
-}
-
-.step{
-    min-width:115px;
-    text-align:center;
-    padding:10px;
-    border:1px solid #dbe4ef;
-    border-radius:12px;
-    background:white;
-    color:#77849a;
-    font-size:12px;
-    font-weight:900;
-}
-
-.step.active{
-    background:#1267d9;
-    color:white;
-    border-color:#1267d9;
-}
-
-.step.done{
-    background:#eaf8ef;
-    color:#15803d;
-}
-
-/* CARD */
 .card{
     background:white;
-    border:1px solid #e8edf4;
-    border-radius:17px;
-    padding:22px;
-    margin-bottom:16px;
-    box-shadow:0 5px 22px #17375e0c;
+    border-radius:16px;
+    padding:25px;
+    margin-bottom:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
-h1{
-    font-size:24px;
-    margin:0 0 5px;
+.card h2{
+    margin-top:0;
+    color:#0756b8;
+    border-bottom:2px solid #e8eef6;
+    padding-bottom:12px;
 }
 
-h2{
-    font-size:18px;
-}
-
-.muted{
-    color:#6b778c;
-    font-size:13px;
-}
-
-/* FORM */
 .grid{
     display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:14px;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
 }
 
-.full{
+.field{
+    margin-bottom:12px;
+}
+
+.field.full{
     grid-column:1/-1;
 }
 
 label{
     display:block;
-    font-size:13px;
-    font-weight:800;
+    font-weight:bold;
     margin-bottom:6px;
 }
 
 input,
-select,
-textarea{
+textarea,
+select{
     width:100%;
-    border:1px solid #dbe4ef;
-    border-radius:10px;
-    padding:11px;
-    font:inherit;
-    background:white;
-    outline:none;
+    padding:12px;
+    border:1px solid #ccd5e0;
+    border-radius:9px;
+    font-size:15px;
 }
 
 textarea{
@@ -187,2221 +92,1105 @@ textarea{
     resize:vertical;
 }
 
-input:focus,
-select:focus,
-textarea:focus{
-    border-color:#1267d9;
-    box-shadow:0 0 0 3px #1267d920;
+.damage{
+    border:1px solid #dce4ee;
+    border-radius:12px;
+    padding:15px;
+    margin-bottom:12px;
+    background:#fafcff;
 }
 
-/* EVENT */
-.event{
-    border:1px solid #dbe4ef;
-    border-radius:14px;
-    padding:16px;
-    margin:13px 0;
-    background:#fbfdff;
+.damage-title{
+    font-weight:bold;
+    color:#0756b8;
+    margin-bottom:10px;
 }
 
-/* DAMAGE */
-.damage-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:10px;
+button{
+    border:none;
+    border-radius:10px;
+    padding:12px 20px;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-/* FILE */
-.filebox{
-    border:2px dashed #abc1dc;
-    border-radius:14px;
-    padding:20px;
-    text-align:center;
+.btn-blue{
+    background:#0866d5;
+    color:white;
 }
 
-.preview{
+.btn-green{
+    background:#16a36a;
+    color:white;
+}
+
+.btn-red{
+    background:#dc3545;
+    color:white;
+}
+
+.btn-gray{
+    background:#e7ebf0;
+    color:#222;
+}
+
+.buttons{
     display:flex;
     flex-wrap:wrap;
     gap:10px;
-    margin-top:12px;
 }
 
-.thumb{
-    width:110px;
-    height:110px;
-    object-fit:cover;
-    border:1px solid #dbe4ef;
-    border-radius:10px;
+.signature-box{
+    border:2px dashed #8aa7c7;
+    border-radius:12px;
+    background:#fbfdff;
+    padding:10px;
+}
+
+#signaturePad{
+    width:100%;
+    height:220px;
+    display:block;
+    background:white;
+    border-radius:8px;
+    touch-action:none;
+    cursor:crosshair;
+}
+
+.signature-note{
+    text-align:center;
+    color:#777;
+    margin-top:8px;
+}
+
+.signature-preview{
+    margin-top:15px;
+    display:none;
+}
+
+.signature-preview img{
+    max-width:350px;
+    border:1px solid #ddd;
+    padding:5px;
+}
+
+.file-list{
+    margin-top:10px;
 }
 
 .file-item{
+    background:#f3f6fa;
     padding:10px;
-    border:1px solid #dbe4ef;
-    border-radius:10px;
-    font-size:12px;
-}
-
-/* SIGNATURE */
-.signature{
-    width:100%;
-    height:170px;
-    border:2px dashed #9fb8d7;
-    border-radius:12px;
-    touch-action:none;
-    background:#fff;
-}
-
-/* ACTION */
-.actions{
-    display:flex;
-    justify-content:flex-end;
-    gap:9px;
-    flex-wrap:wrap;
-    margin-top:18px;
-}
-
-/* NOTICE */
-.notice{
-    padding:12px 14px;
-    background:#eff6ff;
-    border-left:4px solid #1267d9;
     border-radius:8px;
-    font-size:13px;
+    margin-bottom:6px;
 }
 
-/* REVIEW */
-.review{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-}
-
-.review div{
-    background:#f7f9fc;
-    padding:11px;
-    border-radius:9px;
-}
-
-.review b{
-    display:block;
-    font-size:11px;
-    color:#6b778c;
-    margin-bottom:3px;
-}
-
-/* TABLE */
-.table-wrap{
-    overflow:auto;
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-    min-width:720px;
-}
-
-th,
-td{
-    padding:10px;
-    border-bottom:1px solid #e9edf3;
-    text-align:left;
-    font-size:13px;
-}
-
-th{
-    background:#f7f9fc;
-}
-
-/* STATUS */
 .status{
-    border-radius:999px;
-    padding:5px 9px;
-    font-size:11px;
-    font-weight:900;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px;
+    border-radius:12px;
+    background:#eef7ff;
 }
 
-.draft{
-    background:#eaf1fb;
-    color:#16559d;
+.status-circle{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:#0866d5;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:25px;
 }
 
-.pending{
-    background:#fff4d6;
-    color:#8a5b00;
+.progress{
+    height:12px;
+    background:#e3e8ef;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:15px;
 }
 
-.completed{
-    background:#dcfce7;
-    color:#166534;
+.progress-bar{
+    width:25%;
+    height:100%;
+    background:#0866d5;
 }
 
-.hidden{
-    display:none!important;
+.small{
+    font-size:13px;
+    color:#6c757d;
 }
 
-.footer{
-    text-align:center;
-    color:#7b8798;
-    font-size:12px;
-    padding:18px;
+.print-header{
+    display:none;
 }
 
-/* MOBILE */
+/* =========================
+   PRINT
+========================= */
+
+@media print{
+
+    body{
+        background:white;
+    }
+
+    .header,
+    .buttons,
+    .no-print{
+        display:none !important;
+    }
+
+    .container{
+        max-width:none;
+        margin:0;
+    }
+
+    .card{
+        box-shadow:none;
+        border:1px solid #ddd;
+        page-break-inside:avoid;
+    }
+
+    .print-header{
+        display:block;
+        text-align:center;
+        margin-bottom:20px;
+    }
+
+    .print-header h1{
+        margin:0;
+        font-size:22px;
+    }
+
+    .print-header p{
+        margin:5px 0;
+    }
+
+    input,
+    textarea,
+    select{
+        border:none;
+        padding:4px;
+    }
+
+    #signaturePad{
+        display:none;
+    }
+
+    .signature-print{
+        display:block !important;
+        max-width:300px;
+        max-height:130px;
+    }
+
+    .signature-preview{
+        display:block !important;
+    }
+}
+
 @media(max-width:700px){
 
-    .grid,
-    .review{
+    .grid{
         grid-template-columns:1fr;
-    }
-
-    .full{
-        grid-column:auto;
-    }
-
-    .damage-grid{
-        grid-template-columns:1fr;
-    }
-
-    .brand{
-        font-size:15px;
-    }
-
-    .top .btn{
-        padding:9px;
     }
 
     .card{
         padding:17px;
     }
 
-    h1{
+    .header h1{
         font-size:21px;
     }
 
-    .step{
-        min-width:100px;
+    #signaturePad{
+        height:200px;
     }
 }
 
-/* PRINT */
-@media print{
-
-    header,
-    .steps,
-    .no-print,
-    #tracking{
-        display:none!important;
-    }
-
-    body{
-        background:white;
-    }
-
-    .container{
-        margin:0;
-        padding:0;
-    }
-
-    .card{
-        box-shadow:none;
-        border:0;
-    }
-}
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header>
-
-<div class="head">
-
-<div class="brand">
-
-INFINITY SURVEY LIMITED PARTNERSHIP
-
-<small>
-ห้างหุ้นส่วนจำกัด อินฟินิตี้ เซอร์เวย์ | CLAIM ONLINE
-</small>
-
+<div class="header">
+    <h1>INFINITY SURVEY LIMITED PARTNERSHIP</h1>
+    <p>ระบบแจ้งเคลมและรับเอกสารออนไลน์</p>
 </div>
-
-<div class="top no-print">
-
-<button class="btn white" onclick="saveDraft()">
-💾 บันทึก
-</button>
-
-<button class="btn white" onclick="printClaim()">
-🖨️ ปริ้น
-</button>
-
-</div>
-
-</div>
-
-</header>
-
 
 <div class="container">
 
-
-<!-- STEP -->
-<div class="steps no-print">
-
-<div class="step active">
-① ข้อมูลเคลม
+<div class="print-header">
+    <h1>INFINITY SURVEY LIMITED PARTNERSHIP</h1>
+    <p>เอกสารแจ้งเคลมออนไลน์</p>
 </div>
 
-<div class="step">
-② เหตุการณ์
-</div>
+<!-- ===================== -->
+<!-- CLAIM INFORMATION -->
+<!-- ===================== -->
 
-<div class="step">
-③ ความเสียหาย
-</div>
+<div class="card">
 
-<div class="step">
-④ หลักฐาน
-</div>
-
-<div class="step">
-⑤ เซ็นออนไลน์
-</div>
-
-<div class="step">
-⑥ ตรวจสอบ
-</div>
-
-</div>
-
-
-<!-- STEP 1 -->
-<section id="s1" class="card">
-
-<h1>
-📄 ข้อมูลใบแจ้งความเสียหาย
-</h1>
-
-<p class="muted">
-กรอกข้อมูลจากใบแจ้งความเสียหายของบริษัทประกัน
-</p>
+<h2>📄 เอกสารแจ้งเคลมเพิ่มเติม</h2>
 
 <div class="grid">
 
-<div>
-<label>เลขที่แจ้ง</label>
-<input id="claimNo">
+<div class="field">
+<label>เลขรับแจ้ง</label>
+<input id="claimNo" placeholder="เช่น 09XXXXXX">
 </div>
 
-<div>
+<div class="field">
 <label>เลขกรมธรรม์</label>
 <input id="policyNo">
 </div>
 
-<div>
-<label>วันที่แจ้ง</label>
-<input id="reportDate" type="date">
+<div class="field">
+<label>เลขเคลม</label>
+<input id="caseNo">
 </div>
 
-<div>
-<label>เวลา</label>
-<input id="reportTime" type="time">
+<div class="field">
+<label>วันที่เกิดเหตุ</label>
+<input id="incidentDate" type="date">
 </div>
 
-<div>
-<label>บริษัทประกัน</label>
-<input id="insurer">
+<div class="field">
+<label>เวลาเกิดเหตุ</label>
+<input id="incidentTime" type="time">
 </div>
 
-<div>
-<label>Call Center</label>
-<input id="callcenter">
+<div class="field">
+<label>สถานที่เกิดเหตุ</label>
+<input id="location">
 </div>
 
-<div>
-<label>ผู้แจ้ง</label>
-<input id="reporter">
+<div class="field full">
+<label>ลักษณะการเกิดอุบัติเหตุ</label>
+<textarea id="incidentDetail"
+placeholder="กรอกรายละเอียดเหตุการณ์"></textarea>
 </div>
 
-<div>
-<label>เบอร์โทรศัพท์</label>
-<input id="phone">
 </div>
 
-<div>
+</div>
+
+<!-- ===================== -->
+<!-- VEHICLE -->
+<!-- ===================== -->
+
+<div class="card">
+
+<h2>🚗 ข้อมูลรถ / ทรัพย์สิน</h2>
+
+<div class="grid">
+
+<div class="field">
+<label>ยี่ห้อ</label>
+<input id="brand" placeholder="เช่น TOYOTA">
+</div>
+
+<div class="field">
+<label>รุ่น</label>
+<input id="model">
+</div>
+
+<div class="field">
+<label>ทะเบียน</label>
+<input id="plate">
+</div>
+
+<div class="field">
+<label>จังหวัด</label>
+<input id="province">
+</div>
+
+<div class="field">
 <label>ประเภทประกัน</label>
 
 <select id="insuranceType">
 
-<option>ประเภท 1</option>
-<option>ประเภท 2+</option>
-<option>ประเภท 3+</option>
+<option value="">-- เลือก --</option>
+<option>ประกันภัยชั้น 1</option>
+<option>ประกันภัยชั้น 2+</option>
+<option>ประกันภัยชั้น 3+</option>
+<option>ประกันภัยชั้น 3</option>
 <option>อื่น ๆ</option>
 
 </select>
 
 </div>
 
-<div>
-<label>ประเภทเคลม</label>
-
-<select id="claimType">
-
-<option>รถประกัน + รถคู่กรณี</option>
-<option>รถประกัน</option>
-<option>ทรัพย์สิน</option>
-<option>อื่น ๆ</option>
-
-</select>
+<div class="field">
+<label>เลขกรมธรรม์บริษัท</label>
+<input id="companyPolicy">
+</div>
 
 </div>
 
 </div>
 
+<!-- ===================== -->
+<!-- DAMAGE -->
+<!-- ===================== -->
 
-<div class="actions no-print">
+<div class="card">
 
-<button class="btn primary"
-onclick="go(2)">
-ถัดไป →
+<h2>🔧 รายการความเสียหาย</h2>
+
+<div id="damageContainer"></div>
+
+<button class="btn-blue no-print" onclick="addDamage()">
++ เพิ่มรายการความเสียหาย
 </button>
 
 </div>
 
-</section>
+<!-- ===================== -->
+<!-- EVIDENCE -->
+<!-- ===================== -->
 
+<div class="card">
 
-<!-- STEP 2 -->
-<section id="s2" class="card hidden">
+<h2>📎 หลักฐานยืนยันความเสียหาย</h2>
 
-<h1>
-🚗 ข้อมูลรถและเหตุการณ์
-</h1>
-
-<p class="muted">
-รองรับรถประกันและรถคู่กรณี
+<p class="small">
+สามารถเลือกภาพถ่ายหรือเอกสารจากโทรศัพท์ / คอมพิวเตอร์
 </p>
-
-
-<h2>
-รถประกัน
-</h2>
-
-<div class="grid">
-
-<div>
-<label>ทะเบียน</label>
-<input id="insuredPlate">
-</div>
-
-<div>
-<label>จังหวัด</label>
-<input id="insuredProvince">
-</div>
-
-<div>
-<label>ยี่ห้อ</label>
-<input id="insuredBrand">
-</div>
-
-<div>
-<label>รุ่น</label>
-<input id="insuredModel">
-</div>
-
-<div>
-<label>เลขอ้างอิง</label>
-<input id="insuredRef">
-</div>
-
-</div>
-
-
-<h2 style="margin-top:22px">
-รถคู่กรณี
-</h2>
-
-<div class="grid">
-
-<div>
-<label>ทะเบียน</label>
-<input id="thirdPlate">
-</div>
-
-<div>
-<label>จังหวัด</label>
-<input id="thirdProvince">
-</div>
-
-<div>
-<label>ยี่ห้อ</label>
-<input id="thirdBrand">
-</div>
-
-<div>
-<label>รุ่น</label>
-<input id="thirdModel">
-</div>
-
-<div>
-<label>ชื่อผู้ขับขี่</label>
-<input id="thirdDriver">
-</div>
-
-<div>
-<label>โทรศัพท์</label>
-<input id="thirdPhone">
-</div>
-
-</div>
-
-
-<div class="event">
-
-<div class="grid">
-
-<div>
-<label>วันที่เกิดเหตุ</label>
-<input id="eventDate" type="date">
-</div>
-
-<div>
-<label>เวลาเกิดเหตุ</label>
-<input id="eventTime" type="time">
-</div>
-
-<div class="full">
-
-<label>
-สถานที่เกิดเหตุ
-</label>
-
-<input id="eventPlace">
-
-</div>
-
-<div class="full">
-
-<label>
-ลักษณะการเกิดอุบัติเหตุ
-</label>
-
-<textarea id="eventDetail"></textarea>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="actions no-print">
-
-<button class="btn secondary"
-onclick="go(1)">
-← ย้อนกลับ
-</button>
-
-<button class="btn primary"
-onclick="go(3)">
-ถัดไป →
-</button>
-
-</div>
-
-</section>
-
-
-<!-- STEP 3 -->
-<section id="s3" class="card hidden">
-
-<h1>
-💥 รายการความเสียหาย
-</h1>
-
-<p class="muted">
-กรอกเฉพาะรายการที่พบจริง
-</p>
-
-
-<div class="event">
-
-<h2>
-รถประกัน
-</h2>
-
-<div id="insuredDamage"
-class="damage-grid">
-</div>
-
-<label style="margin-top:12px">
-ความเสียหายส่วนแรก (บาท)
-</label>
 
 <input
-id="insuredExcess"
-type="number"
-min="0">
+    id="files"
+    type="file"
+    multiple
+    accept="image/*,.pdf,.doc,.docx"
+>
+
+<div id="fileList" class="file-list"></div>
 
 </div>
 
+<!-- ===================== -->
+<!-- SIGNATURE -->
+<!-- ===================== -->
 
-<div class="event">
+<div class="card">
 
-<h2>
-รถคู่กรณี
-</h2>
+<h2>✍️ ลงลายเซ็นออนไลน์</h2>
 
-<div id="thirdDamage"
-class="damage-grid">
-</div>
-
-<label style="margin-top:12px">
-ความเสียหายส่วนแรก (บาท)
-</label>
-
-<input
-id="thirdExcess"
-type="number"
-min="0">
-
-</div>
-
-
-<label>
-หมายเหตุเพิ่มเติม
-</label>
-
-<textarea id="damageNote">
-</textarea>
-
-
-<div class="actions no-print">
-
-<button class="btn secondary"
-onclick="go(2)">
-← ย้อนกลับ
-</button>
-
-<button class="btn primary"
-onclick="go(4)">
-ถัดไป →
-</button>
-
-</div>
-
-</section>
-
-
-<!-- STEP 4 -->
-<section id="s4" class="card hidden">
-
-<h1>
-📷 หลักฐานความเสียหาย
-</h1>
-
-<div class="notice">
-
-กดเลือกไฟล์จากมือถือเพื่อถ่ายภาพได้
-รองรับรูปและ PDF
-
-</div>
-
-<br>
-
-<div class="filebox">
-
-<input
-id="files"
-type="file"
-accept="image/*,.pdf"
-multiple
-capture="environment">
-
-<p class="muted">
-
-📸 รูปรถ • ใบแจ้งความเสียหาย • เอกสารประกอบ
-
+<p>
+ใช้นิ้วมือ เมาส์ หรือปากกาเขียนลายเซ็นในช่องด้านล่าง
 </p>
 
-</div>
-
-
-<div id="preview"
-class="preview">
-</div>
-
-
-<div class="actions no-print">
-
-<button class="btn secondary"
-onclick="go(3)">
-← ย้อนกลับ
-</button>
-
-<button class="btn primary"
-onclick="go(5)">
-ถัดไป →
-</button>
-
-</div>
-
-</section>
-
-
-<!-- STEP 5 -->
-<section id="s5" class="card hidden">
-
-<h1>
-✍️ เซ็นเอกสารออนไลน์
-</h1>
-
-<p class="muted">
-เซ็นด้วยนิ้วหรือเมาส์
-</p>
-
-
-<div class="grid">
-
-<div>
-
-<b>
-ผู้ปฏิบัติงาน / ผู้ตรวจสอบ
-</b>
-
-<br><br>
+<div class="signature-box">
 
 <canvas
-id="sig1"
-class="signature">
+    id="signaturePad"
+    aria-label="พื้นที่สำหรับลงลายเซ็นออนไลน์">
 </canvas>
+
+<div class="signature-note">
+✍️ กรุณาเซ็นชื่อในกรอบนี้
+</div>
+
+</div>
 
 <br>
 
-<button
-class="btn secondary no-print"
-onclick="clearSig('sig1')">
+<div class="buttons no-print">
 
-🧹 ล้าง
+<button class="btn-red" onclick="clearSignature()">
+🗑 ล้างลายเซ็น
+</button>
 
+<button class="btn-green" onclick="saveSignature()">
+💾 บันทึกลายเซ็น
 </button>
 
 </div>
 
+<div class="signature-preview" id="signaturePreview">
 
-<div>
+<p><b>ลายเซ็นที่บันทึก:</b></p>
 
-<b>
-ผู้รับหลักฐาน / ผู้ขับขี่
-</b>
-
-<br><br>
-
-<canvas
-id="sig2"
-class="signature">
-</canvas>
-
-<br>
-
-<button
-class="btn secondary no-print"
-onclick="clearSig('sig2')">
-
-🧹 ล้าง
-
-</button>
+<img
+    id="signatureImage"
+    class="signature-print"
+    alt="ลายเซ็น"
+>
 
 </div>
 
 </div>
 
+<!-- ===================== -->
+<!-- PERSON -->
+<!-- ===================== -->
 
-<div
-class="grid"
-style="margin-top:15px">
+<div class="card">
 
-<div>
-
-<label>
-วันที่ลงนาม
-</label>
-
-<input
-id="signDate"
-type="date">
-
-</div>
-
-
-<div>
-
-<label>
-หมายเหตุ
-</label>
-
-<input
-id="signNote">
-
-</div>
-
-</div>
-
-
-<div class="actions no-print">
-
-<button
-class="btn secondary"
-onclick="go(4)">
-
-← ย้อนกลับ
-
-</button>
-
-<button
-class="btn primary"
-onclick="go(6)">
-
-ตรวจสอบ →
-
-</button>
-
-</div>
-
-</section>
-
-
-<!-- STEP 6 -->
-<section id="s6" class="card hidden">
-
-<h1>
-🔎 ตรวจสอบก่อนบันทึก
-</h1>
-
-<div
-id="review"
-class="review">
-</div>
-
-
-<div class="actions no-print">
-
-<button
-class="btn secondary"
-onclick="go(5)">
-
-← แก้ไข
-
-</button>
-
-<button
-class="btn secondary"
-onclick="saveDraft()">
-
-💾 บันทึกแบบร่าง
-
-</button>
-
-<button
-class="btn success"
-onclick="submitClaim()">
-
-✅ บันทึก Claim
-
-</button>
-
-<button
-class="btn primary"
-onclick="printClaim()">
-
-📄 ปริ้น / Save PDF
-
-</button>
-
-</div>
-
-</section>
-
-
-<!-- TRACKING -->
-<section
-id="tracking"
-class="card">
-
-<h2>
-📊 Claim Tracking
-</h2>
-
+<h2>👤 ผู้แจ้ง / ผู้รับรอง</h2>
 
 <div class="grid">
 
+<div class="field">
+<label>ชื่อผู้แจ้ง</label>
+<input id="reporter">
+</div>
+
+<div class="field">
+<label>เบอร์โทรศัพท์</label>
+<input id="phone">
+</div>
+
+<div class="field">
+<label>ชื่อผู้รับหลักฐาน / ผู้รับรอง</label>
+<input id="receiver">
+</div>
+
+<div class="field">
+<label>วันที่รับเอกสาร</label>
+<input id="receiveDate" type="date">
+</div>
+
+</div>
+
+</div>
+
+<!-- ===================== -->
+<!-- STATUS -->
+<!-- ===================== -->
+
+<div class="card">
+
+<h2>📊 ติดตามสถานะการเคลม</h2>
+
+<div class="status">
+
+<div class="status-circle">
+✓
+</div>
+
 <div>
 
-<label>
-ค้นหา
-</label>
+<strong id="statusText">
+รับข้อมูลเบื้องต้นแล้ว
+</strong>
 
-<input
-id="search"
-oninput="renderClaims()"
-placeholder="เลขเคลม / ผู้แจ้ง / ทะเบียน">
-
-</div>
-
-
-<div>
-
-<label>
-จำนวนรายการ
-</label>
-
-<input
-id="count"
-disabled>
+<p class="small">
+เลขเคลม:
+<span id="statusClaim">-</span>
+</p>
 
 </div>
 
 </div>
 
+<div class="progress">
 
-<div
-class="table-wrap"
-style="margin-top:15px">
-
-<table>
-
-<thead>
-
-<tr>
-
-<th>
-เลขเคลม
-</th>
-
-<th>
-ผู้แจ้ง
-</th>
-
-<th>
-ทะเบียน
-</th>
-
-<th>
-วันที่
-</th>
-
-<th>
-สถานะ
-</th>
-
-<th>
-เอกสาร
-</th>
-
-</tr>
-
-</thead>
-
-<tbody id="claimTable">
-</tbody>
-
-</table>
-
-</div>
-
-</section>
-
-
-<div class="footer">
-
-Infinity Survey Limited Partnership
-•
-Claim Online
+<div class="progress-bar"></div>
 
 </div>
 
 </div>
 
+<!-- ===================== -->
+<!-- BUTTONS -->
+<!-- ===================== -->
+
+<div class="card no-print">
+
+<h2>⚙️ จัดการเอกสาร</h2>
+
+<div class="buttons">
+
+<button
+class="btn-green"
+onclick="saveForm()">
+💾 บันทึกข้อมูล
+</button>
+
+<button
+class="btn-blue"
+onclick="window.print()">
+🖨️ พิมพ์ / Save PDF
+</button>
+
+<button
+class="btn-gray"
+onclick="loadForm()">
+↻ โหลดข้อมูลที่บันทึก
+</button>
+
+<button
+class="btn-red"
+onclick="clearForm()">
+ล้างข้อมูล
+</button>
+
+</div>
+
+<br>
+
+<p class="small">
+เมื่อต้องการสร้าง PDF ให้กด "พิมพ์ / Save PDF"
+แล้วเลือกเครื่องพิมพ์เป็น "Save as PDF"
+</p>
+
+</div>
+
+</div>
 
 <script>
 
-const $ = id =>
-document.getElementById(id);
+/* =====================================
+   SIGNATURE PAD
+===================================== */
 
-let claims =
-JSON.parse(
-localStorage.getItem("infinity_claims") || "[]"
-);
+const canvas =
+document.getElementById("signaturePad");
 
-
-const today = () =>
-new Date().toISOString().slice(0,10);
-
-
-const generateClaimNo = () =>
-"CLM-" +
-new Date().getFullYear() +
-"-" +
-String(Date.now()).slice(-6);
-
-
-/* INIT */
-
-function init(){
-
-$("reportDate").value = today();
-
-$("eventDate").value = today();
-
-$("signDate").value = today();
-
-$("claimNo").value =
-generateClaimNo();
-
-damage(
-"insuredDamage",
-"i"
-);
-
-damage(
-"thirdDamage",
-"t"
-);
-
-sig("sig1");
-
-sig("sig2");
-
-renderClaims();
-
-}
-
-
-/* DAMAGE */
-
-function damage(id,p){
-
-let html = "";
-
-for(
-let i=1;
-i<=9;
-i++
-){
-
-html += `
-
-<div>
-
-<label>
-${i}. รายการ
-</label>
-
-<input
-id="${p}${i}"
-placeholder="รายละเอียดความเสียหาย">
-
-</div>
-
-`;
-
-}
-
-$(id).innerHTML =
-html;
-
-}
-
-
-/* STEP */
-
-function go(n){
-
-for(
-let i=1;
-i<=6;
-i++
-){
-
-$("s"+i)
-.classList
-.toggle(
-"hidden",
-i!==n
-);
-
-}
-
-
-document
-.querySelectorAll(".step")
-.forEach(
-(x,i)=>{
-
-x.classList.toggle(
-"active",
-i===n-1
-);
-
-x.classList.toggle(
-"done",
-i<n-1
-);
-
-}
-);
-
-
-if(n===6){
-
-review();
-
-}
-
-scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-}
-
-
-/* ESCAPE */
-
-function esc(v){
-
-return String(v ?? "")
-.replace(
-/[&<>"']/g,
-m=>({
-
-"&":"&amp;",
-"<":"&lt;",
-">":"&gt;",
-'"':"&quot;",
-"'":"&#039;"
-
-}[m])
-);
-
-}
-
-
-/* DAMAGE ARRAY */
-
-function arr(prefix){
-
-let a=[];
-
-for(
-let i=1;
-i<=9;
-i++
-){
-
-let element =
-$(prefix+i);
-
-if(element){
-
-let v =
-element.value.trim();
-
-if(v){
-
-a.push(v);
-
-}
-
-}
-
-}
-
-return a;
-
-}
-
-
-/* DATA */
-
-function data(){
-
-return {
-
-id:
-$("claimNo").value ||
-generateClaimNo(),
-
-policy:
-$("policyNo").value,
-
-reportDate:
-$("reportDate").value,
-
-reportTime:
-$("reportTime").value,
-
-insurer:
-$("insurer").value,
-
-callcenter:
-$("callcenter").value,
-
-reporter:
-$("reporter").value,
-
-phone:
-$("phone").value,
-
-insuranceType:
-$("insuranceType").value,
-
-claimType:
-$("claimType").value,
-
-insuredPlate:
-$("insuredPlate").value,
-
-insuredProvince:
-$("insuredProvince").value,
-
-insuredBrand:
-$("insuredBrand").value,
-
-insuredModel:
-$("insuredModel").value,
-
-insuredRef:
-$("insuredRef").value,
-
-thirdPlate:
-$("thirdPlate").value,
-
-thirdProvince:
-$("thirdProvince").value,
-
-thirdBrand:
-$("thirdBrand").value,
-
-thirdModel:
-$("thirdModel").value,
-
-thirdDriver:
-$("thirdDriver").value,
-
-thirdPhone:
-$("thirdPhone").value,
-
-eventDate:
-$("eventDate").value,
-
-eventTime:
-$("eventTime").value,
-
-eventPlace:
-$("eventPlace").value,
-
-eventDetail:
-$("eventDetail").value,
-
-insuredDamage:
-arr("i"),
-
-thirdDamage:
-arr("t"),
-
-insuredExcess:
-$("insuredExcess").value || 0,
-
-thirdExcess:
-$("thirdExcess").value || 0,
-
-damageNote:
-$("damageNote").value,
-
-signDate:
-$("signDate").value,
-
-signNote:
-$("signNote").value,
-
-sig1:
-$("sig1").toDataURL("image/png"),
-
-sig2:
-$("sig2").toDataURL("image/png"),
-
-files:
-[...$("files").files]
-.map(x=>x.name),
-
-status:
-"Pending"
-
-};
-
-}
-
-
-/* REVIEW */
-
-function review(){
-
-let c = data();
-
-$("review").innerHTML = `
-
-<div>
-<b>เลขที่แจ้ง</b>
-${esc(c.id)}
-</div>
-
-<div>
-<b>กรมธรรม์</b>
-${esc(c.policy)||"-"}
-</div>
-
-<div>
-<b>บริษัทประกัน</b>
-${esc(c.insurer)||"-"}
-</div>
-
-<div>
-<b>ผู้แจ้ง</b>
-${esc(c.reporter)||"-"}
-</div>
-
-<div>
-<b>รถประกัน</b>
-${esc(c.insuredPlate)||"-"}
-</div>
-
-<div>
-<b>รถคู่กรณี</b>
-${esc(c.thirdPlate)||"-"}
-</div>
-
-<div>
-<b>วันเวลาเกิดเหตุ</b>
-${esc(c.eventDate)}
-${esc(c.eventTime)}
-</div>
-
-<div>
-<b>สถานที่</b>
-${esc(c.eventPlace)||"-"}
-</div>
-
-<div class="full">
-<b>ลักษณะเหตุการณ์</b>
-${esc(c.eventDetail)||"-"}
-</div>
-
-<div>
-<b>ความเสียหายรถประกัน</b>
-${
-c.insuredDamage.length
-?
-c.insuredDamage.map(esc).join("<br>")
-:
-"-"
-}
-</div>
-
-<div>
-<b>ความเสียหายรถคู่กรณี</b>
-${
-c.thirdDamage.length
-?
-c.thirdDamage.map(esc).join("<br>")
-:
-"-"
-}
-</div>
-
-<div>
-<b>หลักฐาน</b>
-${
-c.files.length
-?
-c.files.map(esc).join("<br>")
-:
-"ไม่มี"
-}
-</div>
-
-<div>
-<b>ลายเซ็น</b>
-ผู้ตรวจสอบ + ผู้รับหลักฐาน
-</div>
-
-`;
-
-}
-
-
-/* SAVE */
-
-function saveDraft(){
-
-let c = data();
-
-c.status = "Draft";
-
-upsert(c);
-
-alert(
-"บันทึกแบบร่างแล้ว\n" +
-c.id
-);
-
-}
-
-
-/* SUBMIT */
-
-function submitClaim(){
-
-let c = data();
-
-c.status = "Pending";
-
-upsert(c);
-
-alert(
-"บันทึก Claim สำเร็จ\n" +
-c.id
-);
-
-}
-
-
-/* UPSERT */
-
-function upsert(c){
-
-let i =
-claims.findIndex(
-x=>x.id===c.id
-);
-
-if(i>=0){
-
-claims[i] = c;
-
-}else{
-
-claims.unshift(c);
-
-}
-
-localStorage.setItem(
-"infinity_claims",
-JSON.stringify(claims)
-);
-
-renderClaims();
-
-}
-
-
-/* TRACKING */
-
-function renderClaims(){
-
-let q =
-($("search").value||"")
-.toLowerCase();
-
-let result =
-claims.filter(
-c=>
-(
-c.id +
-" " +
-c.reporter +
-" " +
-c.insuredPlate
-)
-.toLowerCase()
-.includes(q)
-);
-
-$("count").value =
-claims.length +
-" รายการ";
-
-
-$("claimTable").innerHTML =
-result.map(c=>`
-
-<tr>
-
-<td>
-<b>
-${esc(c.id)}
-</b>
-</td>
-
-<td>
-${esc(c.reporter)||"-"}
-</td>
-
-<td>
-${esc(c.insuredPlate)||"-"}
-</td>
-
-<td>
-${esc(c.eventDate||c.reportDate)||"-"}
-</td>
-
-<td>
-
-<span
-class="status ${
-c.status==="Draft"
-?
-"draft"
-:
-"pending"
-}">
-
-${esc(c.status)}
-
-</span>
-
-</td>
-
-<td>
-
-<button
-class="btn secondary"
-onclick="saved('${encodeURIComponent(c.id)}')">
-
-🖨️ PDF
-
-</button>
-
-</td>
-
-</tr>
-
-`).join("");
-
-}
-
-
-/* PRINT SAVED CLAIM */
-
-function saved(id){
-
-let c =
-claims.find(
-x=>x.id ===
-decodeURIComponent(id)
-);
-
-if(c){
-
-print(c);
-
-}
-
-}
-
-
-/* PRINT CURRENT */
-
-function printClaim(){
-
-print(data());
-
-}
-
-
-/* PRINT */
-
-function print(c){
-
-let w =
-window.open(
-"",
-"_blank"
-);
-
-w.document.write(`
-
-<html lang="th">
-
-<head>
-
-<meta charset="UTF-8">
-
-<title>
-${esc(c.id)}
-</title>
-
-<style>
-
-body{
-
-font-family:
-Tahoma,Arial;
-
-padding:28px;
-
-line-height:1.55;
-
-color:#172338;
-
-}
-
-.head{
-
-text-align:center;
-
-border-bottom:
-2px solid #0b4ca8;
-
-padding-bottom:12px;
-
-}
-
-.head h2{
-
-margin:0;
-
-color:#0b4ca8;
-
-}
-
-.title{
-
-text-align:center;
-
-font-size:22px;
-
-font-weight:bold;
-
-margin:18px;
-
-}
-
-table{
-
-width:100%;
-
-border-collapse:collapse;
-
-}
-
-td{
-
-border:
-1px solid #ccc;
-
-padding:7px;
-
-}
-
-.box{
-
-border:
-1px solid #ccc;
-
-padding:10px;
-
-margin:10px 0;
-
-}
-
-.cols{
-
-display:flex;
-
-gap:30px;
-
-margin-top:35px;
-
-}
-
-.col{
-
-flex:1;
-
-text-align:center;
-
-}
-
-.sig{
-
-width:100%;
-
-height:125px;
-
-object-fit:contain;
-
-border:
-1px solid #ddd;
-
-}
-
-.print{
-
-text-align:center;
-
-margin:25px;
-
-}
-
-@media print{
-
-.print{
-
-display:none;
-
-}
-
-}
-
-</style>
-
-</head>
-
-
-<body>
-
-
-<div class="head">
-
-<h2>
-INFINITY SURVEY LIMITED PARTNERSHIP
-</h2>
-
-<div>
-ห้างหุ้นส่วนจำกัด อินฟินิตี้ เซอร์เวย์
-</div>
-
-<div>
-ระบบแจ้งเคลมออนไลน์
-</div>
-
-</div>
-
-
-<div class="title">
-
-เอกสารแจ้งเคลมเพิ่มเติม
-
-</div>
-
-
-<table>
-
-<tr>
-
-<td>
-เลขที่แจ้ง
-</td>
-
-<td>
-${esc(c.id)}
-</td>
-
-<td>
-เลขกรมธรรม์
-</td>
-
-<td>
-${esc(c.policy)||"-"}
-</td>
-
-</tr>
-
-
-<tr>
-
-<td>
-บริษัทประกัน
-</td>
-
-<td>
-${esc(c.insurer)||"-"}
-</td>
-
-<td>
-Call Center
-</td>
-
-<td>
-${esc(c.callcenter)||"-"}
-</td>
-
-</tr>
-
-
-<tr>
-
-<td>
-ผู้แจ้ง
-</td>
-
-<td>
-${esc(c.reporter)||"-"}
-</td>
-
-<td>
-โทร
-</td>
-
-<td>
-${esc(c.phone)||"-"}
-</td>
-
-</tr>
-
-</table>
-
-
-<div class="box">
-
-<b>
-รถประกัน
-</b>
-
-<br>
-
-ทะเบียน
-${esc(c.insuredPlate)||"-"}
-
-|
-
-${esc(c.insuredBrand)||"-"}
-
-${esc(c.insuredModel)||"-"}
-
-|
-
-จังหวัด
-${esc(c.insuredProvince)||"-"}
-
-</div>
-
-
-<div class="box">
-
-<b>
-รถคู่กรณี
-</b>
-
-<br>
-
-ทะเบียน
-${esc(c.thirdPlate)||"-"}
-
-|
-
-${esc(c.thirdBrand)||"-"}
-
-${esc(c.thirdModel)||"-"}
-
-|
-
-จังหวัด
-${esc(c.thirdProvince)||"-"}
-
-<br>
-
-ผู้ขับขี่
-${esc(c.thirdDriver)||"-"}
-
-โทร
-${esc(c.thirdPhone)||"-"}
-
-</div>
-
-
-<div class="box">
-
-<b>
-เหตุการณ์
-</b>
-
-<br>
-
-${esc(c.eventDate)}
-
-${esc(c.eventTime)}
-
-|
-
-${esc(c.eventPlace)||"-"}
-
-<br>
-
-${esc(c.eventDetail)||"-"}
-
-</div>
-
-
-<h3>
-ความเสียหายรถประกัน
-</h3>
-
-${
-c.insuredDamage.length
-?
-"<ol>"+
-c.insuredDamage
-.map(x=>"<li>"+esc(x)+"</li>")
-.join("")+
-"</ol>"
-:
-"-"
-}
-
-
-<p>
-ส่วนแรก
-${esc(c.insuredExcess)}
-บาท
-</p>
-
-
-<h3>
-ความเสียหายรถคู่กรณี
-</h3>
-
-${
-c.thirdDamage.length
-?
-"<ol>"+
-c.thirdDamage
-.map(x=>"<li>"+esc(x)+"</li>")
-.join("")+
-"</ol>"
-:
-"-"
-}
-
-
-<p>
-ส่วนแรก
-${esc(c.thirdExcess)}
-บาท
-</p>
-
-
-<div class="box">
-
-<b>
-หมายเหตุ
-</b>
-
-<br>
-
-${esc(c.damageNote)||"-"}
-
-</div>
-
-
-<div class="box">
-
-<b>
-ไฟล์หลักฐาน
-</b>
-
-<br>
-
-${
-c.files.length
-?
-c.files.map(esc).join("<br>")
-:
-"ไม่มีไฟล์แนบ"
-}
-
-</div>
-
-
-<div class="cols">
-
-
-<div class="col">
-
-<b>
-ผู้ตรวจสอบ
-</b>
-
-<br>
-
-<img
-class="sig"
-src="${c.sig1}">
-
-<br>
-
-วันที่
-${esc(c.signDate)}
-
-</div>
-
-
-<div class="col">
-
-<b>
-ผู้รับหลักฐาน / ผู้ขับขี่
-</b>
-
-<br>
-
-<img
-class="sig"
-src="${c.sig2}">
-
-<br>
-
-วันที่
-${esc(c.signDate)}
-
-</div>
-
-
-</div>
-
-
-<div class="print">
-
-<button
-onclick="window.print()">
-
-🖨️ Print / Save as PDF
-
-</button>
-
-</div>
-
-
-</body>
-
-</html>
-
-`);
-
-w.document.close();
-
-}
-
-
-/* SIGNATURE */
-
-function sig(id){
-
-let canvas =
-$(id);
-
-let ctx =
+const ctx =
 canvas.getContext("2d");
 
 let drawing = false;
 
-let last;
+function resizeCanvas(){
 
+    const ratio =
+        Math.max(window.devicePixelRatio || 1,1);
 
-function resize(){
+    const rect =
+        canvas.getBoundingClientRect();
 
-let r =
-canvas.getBoundingClientRect();
+    canvas.width =
+        rect.width * ratio;
 
-let q =
-window.devicePixelRatio || 1;
+    canvas.height =
+        rect.height * ratio;
 
-canvas.width =
-r.width*q;
+    ctx.scale(ratio,ratio);
 
-canvas.height =
-r.height*q;
-
-ctx.setTransform(
-q,0,0,q,0,0
-);
-
-ctx.lineWidth =
-2.5;
-
-ctx.lineCap =
-"round";
-
-ctx.strokeStyle =
-"#123d72";
+    ctx.lineWidth = 2.5;
+    ctx.lineCap = "round";
+    ctx.lineJoin = "round";
+    ctx.strokeStyle = "#111";
 
 }
 
-resize();
+resizeCanvas();
+
+window.addEventListener("resize",resizeCanvas);
 
 
-function point(e){
+/* Pointer Events
+   รองรับ Mouse + Touch + Pen
+*/
 
-let r =
-canvas.getBoundingClientRect();
+function getPosition(e){
 
-let p =
-e.touches
-?
-e.touches[0]
-:
-e;
+    const rect =
+        canvas.getBoundingClientRect();
 
-return {
-
-x:p.clientX-r.left,
-
-y:p.clientY-r.top
-
-};
+    return {
+        x:e.clientX - rect.left,
+        y:e.clientY - rect.top
+    };
 
 }
 
+canvas.addEventListener("pointerdown",function(e){
 
-function start(e){
+    drawing=true;
 
-drawing = true;
+    const p=getPosition(e);
 
-last =
-point(e);
+    ctx.beginPath();
+    ctx.moveTo(p.x,p.y);
 
-e.preventDefault();
-
-}
-
-
-function move(e){
-
-if(!drawing)
-return;
-
-let p =
-point(e);
-
-ctx.beginPath();
-
-ctx.moveTo(
-last.x,
-last.y
-);
-
-ctx.lineTo(
-p.x,
-p.y
-);
-
-ctx.stroke();
-
-last=p;
-
-e.preventDefault();
-
-}
-
-
-canvas.onmousedown =
-start;
-
-canvas.onmousemove =
-move;
-
-window.addEventListener(
-"mouseup",
-()=>drawing=false
-);
-
-
-canvas.ontouchstart =
-start;
-
-canvas.ontouchmove =
-move;
-
-canvas.ontouchend =
-()=>drawing=false;
-
-}
-
-
-/* CLEAR SIGNATURE */
-
-function clearSig(id){
-
-let canvas =
-$(id);
-
-let ctx =
-canvas.getContext("2d");
-
-ctx.clearRect(
-0,
-0,
-canvas.width,
-canvas.height
-);
-
-}
-
-
-/* FILE PREVIEW */
-
-$("files").onchange = function(){
-
-$("preview").innerHTML = "";
-
-[
-...$("files").files
-].forEach(file=>{
-
-if(
-file.type.startsWith("image/")
-){
-
-let img =
-document.createElement("img");
-
-img.className =
-"thumb";
-
-img.src =
-URL.createObjectURL(file);
-
-$("preview")
-.appendChild(img);
-
-}
-
-else{
-
-let div =
-document.createElement("div");
-
-div.className =
-"file-item";
-
-div.textContent =
-"📄 " +
-file.name;
-
-$("preview")
-.appendChild(div);
-
-}
+    canvas.setPointerCapture(e.pointerId);
 
 });
 
-};
+canvas.addEventListener("pointermove",function(e){
+
+    if(!drawing)return;
+
+    const p=getPosition(e);
+
+    ctx.lineTo(p.x,p.y);
+    ctx.stroke();
+
+});
+
+canvas.addEventListener("pointerup",function(){
+
+    drawing=false;
+
+});
+
+canvas.addEventListener("pointercancel",function(){
+
+    drawing=false;
+
+});
 
 
-/* START */
+/* =====================================
+   CLEAR SIGNATURE
+===================================== */
 
-init();
+function clearSignature(){
+
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+    document.getElementById(
+        "signaturePreview"
+    ).style.display="none";
+
+}
+
+
+/* =====================================
+   SAVE SIGNATURE
+===================================== */
+
+function saveSignature(){
+
+    const image =
+        canvas.toDataURL("image/png");
+
+    localStorage.setItem(
+        "claimSignature",
+        image
+    );
+
+    document.getElementById(
+        "signatureImage"
+    ).src=image;
+
+    document.getElementById(
+        "signaturePreview"
+    ).style.display="block";
+
+    alert("บันทึกลายเซ็นเรียบร้อยแล้ว");
+
+}
+
+
+/* =====================================
+   LOAD SIGNATURE
+===================================== */
+
+function loadSignature(){
+
+    const image =
+        localStorage.getItem("claimSignature");
+
+    if(image){
+
+        document.getElementById(
+            "signatureImage"
+        ).src=image;
+
+        document.getElementById(
+            "signaturePreview"
+        ).style.display="block";
+
+    }
+
+}
+
+
+/* =====================================
+   DAMAGE ITEMS
+===================================== */
+
+let damageCount=0;
+
+function addDamage(){
+
+    damageCount++;
+
+    const div=
+    document.createElement("div");
+
+    div.className="damage";
+
+    div.innerHTML=`
+
+        <div class="damage-title">
+        รายการความเสียหาย ${damageCount}
+        </div>
+
+        <div class="grid">
+
+            <div class="field">
+                <label>ชิ้นส่วน / รายการ</label>
+                <input
+                class="damage-name"
+                placeholder="เช่น กันชนหน้า">
+            </div>
+
+            <div class="field">
+                <label>ประมาณการค่าเสียหาย (บาท)</label>
+                <input
+                class="damage-cost"
+                type="number"
+                placeholder="0">
+            </div>
+
+            <div class="field full">
+                <label>รายละเอียด</label>
+                <textarea
+                class="damage-detail"
+                placeholder="รายละเอียดความเสียหาย"></textarea>
+            </div>
+
+        </div>
+
+    `;
+
+    document
+    .getElementById("damageContainer")
+    .appendChild(div);
+
+}
+
+
+/* สร้างรายการเริ่มต้น */
+
+addDamage();
+addDamage();
+addDamage();
+
+
+/* =====================================
+   FILE UPLOAD
+===================================== */
+
+document
+.getElementById("files")
+.addEventListener("change",function(){
+
+    const list =
+        document.getElementById("fileList");
+
+    list.innerHTML="";
+
+    Array.from(this.files).forEach(file=>{
+
+        const div =
+            document.createElement("div");
+
+        div.className="file-item";
+
+        div.innerHTML=
+        "📎 <b>"+file.name+"</b> ("+
+        Math.round(file.size/1024)+
+        " KB)";
+
+        list.appendChild(div);
+
+    });
+
+});
+
+
+/* =====================================
+   COLLECT FORM
+===================================== */
+
+function getFormData(){
+
+    const damages=[];
+
+    document
+    .querySelectorAll(".damage")
+    .forEach(item=>{
+
+        damages.push({
+
+            name:
+            item.querySelector(
+            ".damage-name").value,
+
+            cost:
+            item.querySelector(
+            ".damage-cost").value,
+
+            detail:
+            item.querySelector(
+            ".damage-detail").value
+
+        });
+
+    });
+
+
+    return {
+
+        claimNo:
+        document.getElementById("claimNo").value,
+
+        policyNo:
+        document.getElementById("policyNo").value,
+
+        caseNo:
+        document.getElementById("caseNo").value,
+
+        incidentDate:
+        document.getElementById("incidentDate").value,
+
+        incidentTime:
+        document.getElementById("incidentTime").value,
+
+        location:
+        document.getElementById("location").value,
+
+        incidentDetail:
+        document.getElementById("incidentDetail").value,
+
+        brand:
+        document.getElementById("brand").value,
+
+        model:
+        document.getElementById("model").value,
+
+        plate:
+        document.getElementById("plate").value,
+
+        province:
+        document.getElementById("province").value,
+
+        insuranceType:
+        document.getElementById("insuranceType").value,
+
+        companyPolicy:
+        document.getElementById("companyPolicy").value,
+
+        reporter:
+        document.getElementById("reporter").value,
+
+        phone:
+        document.getElementById("phone").value,
+
+        receiver:
+        document.getElementById("receiver").value,
+
+        receiveDate:
+        document.getElementById("receiveDate").value,
+
+        damages:damages,
+
+        signature:
+        localStorage.getItem("claimSignature") || ""
+
+    };
+
+}
+
+
+/* =====================================
+   SAVE FORM
+===================================== */
+
+function saveForm(){
+
+    const data=getFormData();
+
+    localStorage.setItem(
+        "claimFormData",
+        JSON.stringify(data)
+    );
+
+    document.getElementById(
+        "statusClaim"
+    ).innerText=
+        data.caseNo || data.claimNo || "-";
+
+    alert(
+        "บันทึกข้อมูลเรียบร้อยแล้ว"
+    );
+
+}
+
+
+/* =====================================
+   LOAD FORM
+===================================== */
+
+function loadForm(){
+
+    const raw=
+        localStorage.getItem(
+        "claimFormData");
+
+    if(!raw){
+
+        alert("ยังไม่มีข้อมูลที่บันทึกไว้");
+
+        return;
+
+    }
+
+    const data=
+        JSON.parse(raw);
+
+
+    document.getElementById("claimNo").value=
+        data.claimNo || "";
+
+    document.getElementById("policyNo").value=
+        data.policyNo || "";
+
+    document.getElementById("caseNo").value=
+        data.caseNo || "";
+
+    document.getElementById("incidentDate").value=
+        data.incidentDate || "";
+
+    document.getElementById("incidentTime").value=
+        data.incidentTime || "";
+
+    document.getElementById("location").value=
+        data.location || "";
+
+    document.getElementById("incidentDetail").value=
+        data.incidentDetail || "";
+
+    document.getElementById("brand").value=
+        data.brand || "";
+
+    document.getElementById("model").value=
+        data.model || "";
+
+    document.getElementById("plate").value=
+        data.plate || "";
+
+    document.getElementById("province").value=
+        data.province || "";
+
+    document.getElementById("insuranceType").value=
+        data.insuranceType || "";
+
+    document.getElementById("companyPolicy").value=
+        data.companyPolicy || "";
+
+    document.getElementById("reporter").value=
+        data.reporter || "";
+
+    document.getElementById("phone").value=
+        data.phone || "";
+
+    document.getElementById("receiver").value=
+        data.receiver || "";
+
+    document.getElementById("receiveDate").value=
+        data.receiveDate || "";
+
+
+    if(data.signature){
+
+        localStorage.setItem(
+            "claimSignature",
+            data.signature
+        );
+
+        loadSignature();
+
+    }
+
+
+    document.getElementById(
+        "statusClaim"
+    ).innerText=
+        data.caseNo || data.claimNo || "-";
+
+
+    alert("โหลดข้อมูลเรียบร้อยแล้ว");
+
+}
+
+
+/* =====================================
+   CLEAR FORM
+===================================== */
+
+function clearForm(){
+
+    if(!confirm(
+        "ต้องการล้างข้อมูลทั้งหมดหรือไม่?"
+    )) return;
+
+    localStorage.removeItem(
+        "claimFormData");
+
+    localStorage.removeItem(
+        "claimSignature");
+
+    location.reload();
+
+}
+
+
+/* =====================================
+   STATUS
+===================================== */
+
+document
+.getElementById("caseNo")
+.addEventListener("input",function(){
+
+    document.getElementById(
+        "statusClaim"
+    ).innerText=this.value || "-";
+
+});
+
+
+/* =====================================
+   AUTO LOAD
+===================================== */
+
+window.addEventListener(
+    "load",
+    function(){
+
+        loadSignature();
+
+        const raw=
+        localStorage.getItem(
+        "claimFormData");
+
+        if(raw){
+
+            try{
+
+                const data=JSON.parse(raw);
+
+                document.getElementById(
+                    "statusClaim"
+                ).innerText=
+                    data.caseNo ||
+                    data.claimNo ||
+                    "-";
+
+            }catch(e){}
+
+        }
+
+    }
+);
 
 </script>
 
